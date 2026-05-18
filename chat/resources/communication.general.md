@@ -113,15 +113,16 @@ Never silently infer missing details.
 
 - Claude behavior → `communication.claude.md`
 - General + ChatGPT behavior → this file (`communication.general.md`)
-- General project state → `app.project-state.md`
+- General project state → `<scope>.project-state.md`
 - Workflows → `playbooks.workflows.md`
-- Design-track status (when active) → latest `app.design-status.md` when available
+- Design-track status (when active) → latest `<scope>.design-status.md` when available
 - Design source of truth inside the repo → `context/design/`
 - Live repo authoritative documents (`CLAUDE.md`, the active scope baseline at `docs/08-scope.md`, `docs/01-working-rules.md`, `docs/02-git-workflow.md` (incl. §14 conditional milestone-branch policy if adopted), `docs/03-planning-model.md`, the active milestone README) take precedence over the ChatGPT-side resource snapshot when the user pastes them; flag divergence rather than silently inferring
 
 Note:
 - File naming follows ChatGPT resource limitations (no folder structure)
 - File names are treated as flat identifiers
+- `<scope>` placeholder: in resource filenames, `<scope>` denotes the active repo (one of `backend`, `app`, or `website`). For example, `<scope>.project-state.md` resolves to `backend.project-state.md` for navo-backend sessions, `app.project-state.md` for navo-app sessions, and `website.project-state.md` for navo-website sessions.
 
 ---
 
@@ -230,7 +231,7 @@ Goal:
 For design-oriented Claude prompts:
 - make the design mode explicit
 - refer Claude to the repository design-mode entry point when needed: `context/design/design-overview.md`
-- for design-oriented status / cold-start alignment, also use the latest `app.design-status.md` when available
+- for design-oriented status / cold-start alignment, also use the latest `<scope>.design-status.md` when available
 - preserve the boundary between design direction and implementation authority
 - do not ask for visual generation, design-system handoff, or implementation unless explicitly intended
 
@@ -247,7 +248,7 @@ These are intentionally strict.
 
 - Do not mix phases
 - Do not mix development mode and design mode
-- Do not use `app.design-status.md` in development-oriented sessions unless the task explicitly depends on design-track state
+- Do not use `<scope>.design-status.md` in development-oriented sessions unless the task explicitly depends on design-track state
 - Do not expand scope implicitly
 - Do not execute without alignment
 - Do not start visual / design-system generation without reviewed pre-flight decisions

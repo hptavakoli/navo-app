@@ -158,7 +158,7 @@ When explicitly allowed:
 
 When the session is design-oriented:
 - follow the repository design-mode entry point at `context/design/design-overview.md`
-- use latest `app.design-status.md` for design-track status / cold-start alignment when available
+- use latest `<scope>.design-status.md` for design-track status / cold-start alignment when available
 - treat `context/design/` as product/design working knowledge
 - keep design direction separate from implementation authority
 - do not start visual generation, design-system handoff, or implementation unless explicitly authorised
@@ -169,7 +169,7 @@ When the session is design-oriented:
 
 - Do NOT mix phases
 - Do NOT mix development mode and design mode
-- Do NOT use `app.design-status.md` in development-oriented sessions unless the task explicitly depends on design-track state
+- Do NOT use `<scope>.design-status.md` in development-oriented sessions unless the task explicitly depends on design-track state
 - Do NOT expand scope implicitly
 - Do NOT execute without alignment
 - Do NOT start visual / design-system generation without reviewed pre-flight decisions

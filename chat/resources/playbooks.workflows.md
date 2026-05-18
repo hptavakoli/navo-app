@@ -1,4 +1,4 @@
-# Workflows — Navo App
+# Workflows — Navo
 
 This file defines **standard operational workflows** for interacting with AI agents (ChatGPT, Claude, optional auditor) during the project lifecycle.
 
@@ -18,7 +18,7 @@ To transform a work package into a **fully specified, executable plan** before a
 ### Steps
 
 1. Ensure onboarding is complete
-   - Use `app.project-state.md` as the general ChatGPT project-state resource
+   - Use `<scope>.project-state.md` as the general ChatGPT project-state resource
 
 2. Request planning (Claude)
    - Ask for full task breakdown (T1…TN) — or scope + acceptance only for smaller WPs
@@ -135,7 +135,7 @@ To finalize a work package and prepare for the next one.
    - The closure-metadata pattern (closing PR with placeholders, then sign-off patch PR) is documented in `docs/03-planning-model.md`; details belong there, not here
 
 3. Update (ChatGPT-side resource):
-   - `app.project-state.md` — incremental updates only when general project state changes; do not rewrite the full file
+   - `<scope>.project-state.md` — incremental updates only when general project state changes; do not rewrite the full file
 
 4. Ensure:
    - cold-start readiness (no chat dependency)
@@ -159,7 +159,7 @@ To safely transition into the next work package.
 
 2. Onboard each AI:
    - Claude (project-side cold-start anchors): `CLAUDE.md` (dispatcher) → active milestone README → relevant readiness report
-   - ChatGPT (resource-side onboarding): `app.project-state.md`, `communication.general.md`, `communication.claude.md`, `playbooks.workflows.md` (this file)
+   - ChatGPT (resource-side onboarding): `<scope>.project-state.md`, `communication.general.md`, `communication.claude.md`, `playbooks.workflows.md` (this file)
 
 3. Confirm understanding before any planning or execution
 
@@ -182,12 +182,12 @@ To develop product/design direction without mixing it with implementation planni
 1. Start a design-oriented session explicitly
    - Claude Code sessions should follow the repository design-mode router
    - Entry point: `context/design/design-overview.md`
-   - For current design-track status / cold-start alignment, read latest `app.design-status.md` when available
+   - For current design-track status / cold-start alignment, read latest `<scope>.design-status.md` when available
 
 2. Work from the design layer
    - Use `context/design/` as the design working-knowledge area
    - Treat design docs as product/design context, not implementation authority
-   - Treat `app.design-status.md` as a pointer-only status index; canonical design owners remain in `context/design/`
+   - Treat `<scope>.design-status.md` as a pointer-only status index; canonical design owners remain in `context/design/`
 
 3. Resolve design pre-flight before visual generation
    - Brand identity
@@ -207,7 +207,7 @@ To develop product/design direction without mixing it with implementation planni
 
 - Planning → then Implementation (never mix)
 - Design → then visual generation / implementation promotion (never mix)
-- Use `app.design-status.md` only for design-oriented status / cold-start alignment, not as a development tracker
+- Use `<scope>.design-status.md` only for design-oriented status / cold-start alignment, not as a development tracker
 - No execution without explicit user approval
 - Git operation ownership is governed by `docs/02-git-workflow.md` §1.1; ChatGPT may help draft branch names, Conventional Commit subjects/bodies, and PR titles/bodies, but does not authorize Claude to execute Git writes — that authority comes from the user under §1.1's configured track
 - No dependency, package, infrastructure, or environment changes without explicit approval
