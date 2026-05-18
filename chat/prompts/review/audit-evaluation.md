@@ -27,7 +27,7 @@ If either marker block is empty, do NOT proceed. Stop and tell the user which in
 ## Context
 
 - Use current conversation context.
-- Use `context.project-state.md` as source of truth.
+- Use `app.project-state.md` as source of truth.
 - Planning source: `context/tasks/{MILESTONE}/{WORK_PACKAGE}.md` (attached to this conversation).
 - Readiness report (work-in-progress at audit time): `context/sanity-checks/{MILESTONE}/{WORK_PACKAGE}/readiness-report.md` (if available).
 

@@ -12,8 +12,8 @@ The user is the product owner / decision maker. You are the engineering partner,
 
 Sessions are either **development-oriented** (default) or **design-oriented** (when the design track at [`context/design/`](context/design/) is active). The two modes do not mix in the same session.
 
-- **Development mode**: read this dispatcher, the active milestone README, and the active work-package task file. Skip [`context/design/design-status.md`](context/design/design-status.md) unless explicitly relevant.
-- **Design mode**: enter via [`context/design/design-overview.md`](context/design/design-overview.md) and [`context/design/design-status.md`](context/design/design-status.md). Working rule §9 in [`docs/01-working-rules.md`](docs/01-working-rules.md) governs the boundary.
+- **Development mode**: read this dispatcher, the active milestone README, and the active work-package task file. Skip [`context/design/app.design-status.md`](context/design/app.design-status.md) unless explicitly relevant.
+- **Design mode**: enter via [`context/design/design-overview.md`](context/design/design-overview.md) and [`context/design/app.design-status.md`](context/design/app.design-status.md). Working rule §9 in [`docs/01-working-rules.md`](docs/01-working-rules.md) governs the boundary.
 
 ---
 
@@ -59,7 +59,7 @@ In priority order for current concerns:
 
 **Non-authoritative AI-tooling resources** (do NOT treat as a source of truth):
 
-- [`chat/`](chat/) — AI-coordination tooling: ChatGPT-uploaded resources (`chat/resources/`) and session prompt templates for Claude / ChatGPT / optional auditor (`chat/prompts/`). See [`chat/README.md`](chat/README.md) for the resources/prompts split and the explicit "not project authority" boundary. Project state in `chat/resources/context.project-state.md` is a point-in-time ChatGPT-side snapshot and may be behind reality; live authority remains the documents listed above.
+- [`chat/`](chat/) — AI-coordination tooling: ChatGPT-uploaded resources (`chat/resources/`) and session prompt templates for Claude / ChatGPT / optional auditor (`chat/prompts/`). See [`chat/README.md`](chat/README.md) for the resources/prompts split and the explicit "not project authority" boundary. Project state in `chat/resources/app.project-state.md` is a point-in-time ChatGPT-side snapshot and may be behind reality; live authority remains the documents listed above.
 
 ---
 

@@ -18,7 +18,7 @@ The live project authority remains:
 - [`../context/product-source/`](../context/product-source/) — raw ideation; **not authority**
 - [`../CHANGELOG.md`](../CHANGELOG.md)
 
-If anything in `chat/` (especially `chat/resources/context.project-state.md`) conflicts with the live project documents above, the live documents win. The ChatGPT-side resources are point-in-time snapshots and may be behind reality.
+If anything in `chat/` (especially `chat/resources/app.project-state.md`) conflicts with the live project documents above, the live documents win. The ChatGPT-side resources are point-in-time snapshots and may be behind reality.
 
 ---
 
@@ -40,7 +40,7 @@ chat/
 
 Five files manually uploaded into ChatGPT's project resource folder. ChatGPT auto-loads them at every onboarding.
 
-- `context.project-state.md` — general project-state snapshot (Current Status, Next Action, Operational Constraints, Key Decisions, Progress Log)
+- `app.project-state.md` — general project-state snapshot (Current Status, Next Action, Operational Constraints, Key Decisions, Progress Log)
 - `communication.general.md` — communication philosophy, language rules, prompt-generation discipline
 - `communication.claude.md` — Claude-specific behavior expectations
 - `playbooks.workflows.md` — operational workflows (Planning, Implementation, Audit, Refinement, Work Package Close, Next Work Package, Design)
@@ -48,9 +48,9 @@ Five files manually uploaded into ChatGPT's project resource folder. ChatGPT aut
 
 The dot-prefix in filenames (e.g., `communication.claude.md`, not `communication-claude.md`) is intentional: ChatGPT shows resources as flat files without folder hierarchy, and the dot-naming preserves grouping in the ChatGPT-side UI.
 
-**Maintenance loop:** edit here (source of truth) → upload or replace in ChatGPT's resource folder. Use `chat/prompts/workflows/claude-project-state-update.md` to ask Claude Code to apply incremental updates to `context.project-state.md`. `user-environment.md` is updated at the user's canonical copy and synced across all the user's projects — do not edit it from inside a single project's session unless the user explicitly asks.
+**Maintenance loop:** edit here (source of truth) → upload or replace in ChatGPT's resource folder. Use `chat/prompts/workflows/claude-project-state-update.md` to ask Claude Code to apply incremental updates to `app.project-state.md`. `user-environment.md` is updated at the user's canonical copy and synced across all the user's projects — do not edit it from inside a single project's session unless the user explicitly asks.
 
-When the design track is active, the user may also upload latest `design-status.md` from `context/design/` as a sixth resource — replaced (not edited) after each design-workflow update.
+When the design track is active, the user may also upload latest `app.design-status.md` from `context/design/` as a sixth resource — replaced (not edited) after each design-workflow update.
 
 ### `prompts/` — session prompt templates
 

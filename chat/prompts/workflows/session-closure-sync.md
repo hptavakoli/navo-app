@@ -20,7 +20,7 @@ This is **not** a planning, implementation, or work-package-closure step. It is 
 2. Read each cold-start anchor and identify stale or out-of-date passages:
    - `CLAUDE.md` — opening paragraph, "Recommended next step," authoritative-document references.
    - The active milestone README — work-package status table, roadmap shape, ADR pointers.
-   - `chat/resources/context.project-state.md` — Current Status, Next Action, Progress Log (append-only), authoritative-documents pointer list.
+   - `chat/resources/app.project-state.md` — Current Status, Next Action, Progress Log (append-only), authoritative-documents pointer list.
    - `chat/resources/playbooks.workflows.md`, `communication.general.md`, `communication.claude.md` — only if a workflow rule or communication rule has changed.
    - `chat/README.md` — only if the live-repo authoritative-documents list has shifted.
    - `CHANGELOG.md` — append a curated `[Unreleased]` entry for the sync pass if it shipped meaningful workflow / documentation changes.

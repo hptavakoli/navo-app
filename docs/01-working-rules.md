@@ -89,7 +89,7 @@ A rule may be broken only via the exception process in §11.
 
 ## 9. Design-track discipline (when active)
 
-- **Design track is optional.** Activate by populating [`../context/design/`](../context/design/) and writing a `design-status.md` pointer index. Until then, treat this section as future-facing structure.
+- **Design track is optional.** Activate by populating [`../context/design/`](../context/design/) and writing a `app.design-status.md` pointer index. Until then, treat this section as future-facing structure.
 - **Design and implementation are separate modes.** Do not mix them in the same session. See the design lifecycle in [`../chat/resources/playbooks.workflows.md`](../chat/resources/playbooks.workflows.md).
 - **Design documents are not implementation authority.** Insights are promoted into ADRs, scope baselines, or work-package task files through the normal workflow — never silently.
 - **Visual generation, design-system handoff, or related work** does not begin until reviewed pre-flight decisions exist.

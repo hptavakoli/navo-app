@@ -28,7 +28,7 @@ Skip when:
 - **Design docs are working knowledge, not implementation authority.** Insights are promoted into ADRs, scope baselines, or work-package task files through the normal workflow — never silently.
 - **Do not mix design and implementation modes** in a single session. See the design lifecycle in [`../../chat/resources/playbooks.workflows.md`](../../chat/resources/playbooks.workflows.md).
 - **No visual generation, design-system handoff, or related work** until reviewed pre-flight decisions exist.
-- **`design-status.md` is a pointer-only status index** — it does not duplicate the canonical design owners; it points at them.
+- **`app.design-status.md` is a pointer-only status index** — it does not duplicate the canonical design owners; it points at them.
 - **Design status updates flow through the design workflow first**, then are reflected in ChatGPT-side resources by replacement (not by editing the resource directly).
 
 ---
@@ -39,7 +39,7 @@ Skip when:
 context/design/
   README.md             ← this file
   design-overview.md    ← entry point: what design surfaces exist, their status
-  design-status.md      ← pointer-only status index (current / next-action)
+  app.design-status.md      ← pointer-only status index (current / next-action)
 ```
 
 Add files as the design track grows: brand canon, UI language brief, design-system pre-flight document, surface maps, etc. The structure is intentionally minimal at scaffold time.

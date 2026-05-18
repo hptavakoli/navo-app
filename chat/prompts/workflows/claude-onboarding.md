@@ -17,9 +17,9 @@ SESSION_MODE = design-oriented | development-oriented
 
 Apply the design / development reading rules below according to the selected mode.
 
-If this session is design-oriented, follow the design-mode router in CLAUDE.md and use the latest `design-status.md` when available for current design-track status. Read `context/design/design-overview.md` as the design entry point.
+If this session is design-oriented, follow the design-mode router in CLAUDE.md and use the latest `app.design-status.md` when available for current design-track status. Read `context/design/design-overview.md` as the design entry point.
 
-If this session is development-oriented, follow the default development reading path and skip `design-status.md` unless the task explicitly depends on design-track state.
+If this session is development-oriented, follow the default development reading path and skip `app.design-status.md` unless the task explicitly depends on design-track state.
 
 Do not propose or plan any work yet — just confirm you have the full picture:
 - what the project is

@@ -5,18 +5,18 @@
 - **What this is:** the prompt sent to Claude Code at the end of a session in which planning, implementation, work-package closure, or any other change with project-state implications has just occurred.
 - **When to use:** at session end, when Claude already holds the full context of what changed in this session.
 - **Target AI:** Claude Code.
-- **Input:** none — Claude reads the file at `chat/resources/context.project-state.md` and applies updates from session context.
+- **Input:** none — Claude reads the file at `chat/resources/app.project-state.md` and applies updates from session context.
 - **Output:** a brief structured report (file updated, summary of changes, intentionally preserved items, outstanding ambiguities). Updates land in the repo first; the user uploads / replaces the ChatGPT-side copy after merge.
 
 --- COPY FROM BELOW ---
 
-The repo-tracked source of truth for general project state lives at `chat/resources/context.project-state.md`. ChatGPT loads a manually-uploaded copy from its resource folder; the repo copy is the source of truth. Edits land in the repo first; the user uploads or replaces the ChatGPT-side copy after merge.
+The repo-tracked source of truth for general project state lives at `chat/resources/app.project-state.md`. ChatGPT loads a manually-uploaded copy from its resource folder; the repo copy is the source of truth. Edits land in the repo first; the user uploads or replaces the ChatGPT-side copy after merge.
 
-This file is NOT the design-track tracker. Detailed design-track progress belongs in `design-status.md`, not here.
+This file is NOT the design-track tracker. Detailed design-track progress belongs in `app.design-status.md`, not here.
 
 ## What to do
 
-1. Read the file at `chat/resources/context.project-state.md`.
+1. Read the file at `chat/resources/app.project-state.md`.
 2. Identify the project-state-relevant changes from the current session context. Read-only repo inspection (`git log`, the active milestone README, recent readiness reports, etc.) is allowed when useful for verification.
 3. Apply minimal, targeted updates per the rules below.
 4. Return a brief structured report.
@@ -57,8 +57,8 @@ Everything else MUST be preserved as-is.
 ### 6. Design-track status boundary
 - Update this file only if the general project state, project-wide governance, or ChatGPT resource-reading rule changed
 - Do NOT update this file for ordinary per-surface design audits, tracker row changes, design activity-log updates, or design next-action changes
-- Do NOT edit `design-status.md` from this prompt
-- If design-track status changed, the repo-side `context/design/design-status.md` should be updated through the normal design workflow, then uploaded or replaced in ChatGPT resources as latest `design-status.md`
+- Do NOT edit `app.design-status.md` from this prompt
+- If design-track status changed, the repo-side `context/design/app.design-status.md` should be updated through the normal design workflow, then uploaded or replaced in ChatGPT resources as latest `app.design-status.md`
 
 ## Git Handling
 
@@ -81,9 +81,9 @@ You MUST NOT:
 - Rewrite the document or change its structure
 - Modify or reorder previous Progress Log entries
 - Add interpretations, decisions, or commentary inside the file
-- Edit `design-status.md`
-- Duplicate detailed design-track status from `design-status.md`
-- Use `context.project-state.md` as the design-track tracker
+- Edit `app.design-status.md`
+- Duplicate detailed design-track status from `app.design-status.md`
+- Use `app.project-state.md` as the design-track tracker
 - Execute any Git write operations
 
 ## Goal

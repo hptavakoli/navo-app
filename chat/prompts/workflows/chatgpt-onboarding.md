@@ -5,7 +5,7 @@
 - **What this is:** the prompt sent to ChatGPT at the start of a fresh project conversation to orient it on project state, communication rules, and system roles.
 - **When to use:** at the start of a new ChatGPT project session, before asking ChatGPT to reason, validate, or generate prompts for Claude.
 - **Target AI:** ChatGPT.
-- **Input:** the five `chat/resources/*.md` files uploaded as project resources in ChatGPT, plus latest `design-status.md` if the design track is active.
+- **Input:** the five `chat/resources/*.md` files uploaded as project resources in ChatGPT, plus latest `app.design-status.md` if the design track is active.
 - **Output:** a brief confirmation of understanding (project purpose, milestone / WP status, design-track status if relevant, next action), in Farsi.
 
 --- COPY FROM BELOW ---
@@ -26,19 +26,19 @@ You have access to the project resources.
 
 Start by reading:
 
-- `context.project-state.md` → general project state, milestone progression, general next actions, and pointers to design-track status
+- `app.project-state.md` → general project state, milestone progression, general next actions, and pointers to design-track status
 - `communication.general.md` → overall communication principles, including development/design mode separation
 - `communication.claude.md` → how we communicate with Claude (executor), including design-mode boundaries
 - `playbooks.workflows.md` → how the system operates end-to-end, including the design workflow
 - `user-environment.md` → user-global / device-stable facts (always relevant for grounding the local environment)
-- For design-oriented sessions, or whenever design-track status / current design next-action matters, also read latest `design-status.md` when available → current design-track status, audited / refreshed briefs, open Q-map, current next-action, deferred / future-horizon items, and do-not-reopen decisions
+- For design-oriented sessions, or whenever design-track status / current design next-action matters, also read latest `app.design-status.md` when available → current design-track status, audited / refreshed briefs, open Q-map, current next-action, deferred / future-horizon items, and do-not-reopen decisions
 
 Note:
 - Resource files are provided without folder hierarchy in the UI.
 - Treat the filenames above as authoritative identifiers (e.g., `communication.claude.md`).
 - Do NOT assume missing context; rely only on these resources.
-- For development-oriented sessions, skip `design-status.md` unless the task explicitly depends on design-track state.
-- If `design-status.md` appears stale compared with the user's latest context, flag possible staleness instead of silently inferring or overwriting it.
+- For development-oriented sessions, skip `app.design-status.md` unless the task explicitly depends on design-track state.
+- If `app.design-status.md` appears stale compared with the user's latest context, flag possible staleness instead of silently inferring or overwriting it.
 
 Do NOT skip any of these.
 
@@ -77,8 +77,8 @@ If the session is design-oriented:
 - keep design direction separate from implementation authority
 - do NOT treat design documents as implementation instructions
 - do NOT generate visual design instructions, design-system handoff prompts, or implementation prompts unless explicitly asked
-- use latest `design-status.md` as the source for current design-track progress when available
-- use `context.project-state.md` for general project state and design-status discovery, not as the detailed design-track tracker
+- use latest `app.design-status.md` as the source for current design-track progress when available
+- use `app.project-state.md` for general project state and design-status discovery, not as the detailed design-track tracker
 
 Additional rules:
 - Internal reasoning / explanations MUST be in Farsi.
@@ -98,7 +98,7 @@ Once you are fully oriented:
 1. Provide a **brief confirmation of understanding** (concise):
    - project purpose (1–2 bullets)
    - current milestone / work-package status (1 bullet)
-   - current design-track status / next design action, only if design-oriented or relevant, using latest `design-status.md` when available (1 bullet)
+   - current design-track status / next design action, only if design-oriented or relevant, using latest `app.design-status.md` when available (1 bullet)
    - next action (1 bullet)
 
 2. Ask clarification questions ONLY if something is unclear.
@@ -113,7 +113,7 @@ DO NOT:
 - infer or invent missing project details
 - act beyond the current work-package scope
 - mix development-mode actions with design-mode actions
-- use `design-status.md` as a development tracker
+- use `app.design-status.md` as a development tracker
 
 Response length constraint: keep the confirmation short (max ~6–8 bullets total).
 

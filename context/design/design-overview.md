@@ -2,7 +2,7 @@
 
 **Status:** Scaffold. Activate when entering a design phase; until then, this file is a placeholder.
 
-> The entry point into the design track. Lists the design surfaces that exist (or will exist), what's been decided, and where the canonical owners live. Companion to [`design-status.md`](design-status.md), which carries the current-status / next-action pointer.
+> The entry point into the design track. Lists the design surfaces that exist (or will exist), what's been decided, and where the canonical owners live. Companion to [`app.design-status.md`](app.design-status.md), which carries the current-status / next-action pointer.
 
 ---
 
@@ -39,7 +39,7 @@ Reminder of the boundaries that govern design work:
 For an AI session entering design mode cold:
 
 1. Read this file end-to-end.
-2. Read [`design-status.md`](design-status.md) for current state and next action.
+2. Read [`app.design-status.md`](app.design-status.md) for current state and next action.
 3. Read the surface-specific canonical owner relevant to the current task.
 4. Read [`../../chat/resources/communication.general.md`](../../chat/resources/communication.general.md) §design-mode if not already loaded.
 5. Confirm understanding before starting any design action.

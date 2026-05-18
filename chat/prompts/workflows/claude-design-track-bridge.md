@@ -15,13 +15,13 @@ I have onboarded Claude Code in a new design-oriented session and Claude has acc
 Your goal: **validate Claude's design-track alignment**, then decide whether a clean next prompt for Claude should be generated.
 
 Use the project resources, especially:
-- `context.project-state.md` → general project state
-- latest `design-status.md` when available → current design-track status / next-action candidates
+- `app.project-state.md` → general project state
+- latest `app.design-status.md` when available → current design-track status / next-action candidates
 - `communication.general.md`
 - `communication.claude.md`
 - `playbooks.workflows.md`
 
-If latest `design-status.md` appears stale compared with the user's supplied context, flag possible staleness instead of silently inferring.
+If latest `app.design-status.md` appears stale compared with the user's supplied context, flag possible staleness instead of silently inferring.
 
 <<<CLAUDE_ORIENTATION_REPORT>>>
 [Paste Claude's orientation / status report here, replacing this line.]
@@ -41,7 +41,7 @@ If the marker block is empty, do NOT proceed. Stop and tell the user the report 
 2. **Assess the next design-track step:**
    - If the next action is clear and already authorised by the user, generate the prompt for Claude.
    - If multiple reasonable options exist, briefly explain them and do **not** force a prompt unless the user clearly asked for one.
-   - If Claude suggests a next action, validate it against latest `design-status.md` and project resources; do not accept it blindly.
+   - If Claude suggests a next action, validate it against latest `app.design-status.md` and project resources; do not accept it blindly.
    - If the right action is only a status / sanity check / closure step, keep the generated prompt limited to that.
 
 3. **Generate a Claude prompt only when appropriate:**
@@ -59,7 +59,7 @@ The prompt MUST preserve these boundaries:
 - Design docs are product / design working knowledge, not implementation authority.
 - Do not start development planning, task-file authoring, code work, or implementation.
 - Do not start design-system handoff, visual generation, layout / component work, or design-system generation unless explicitly requested.
-- Do not edit `design-status.md` from ChatGPT-side workflows; status updates should happen through Claude / repo workflow and then be replaced in ChatGPT resources.
+- Do not edit `app.design-status.md` from ChatGPT-side workflows; status updates should happen through Claude / repo workflow and then be replaced in ChatGPT resources.
 - If a patch is requested, it must be explicitly scoped to design documentation and must not broaden silently.
 - If the action is audit-only, Claude must not edit files.
 
@@ -116,7 +116,7 @@ When generating a prompt for Claude, adapt to the action type, but generally inc
 - Do NOT include multiple prompt variants
 - Do NOT include long explanations
 - Do NOT restate the whole project context
-- Do NOT duplicate detailed design-track status from `design-status.md`
+- Do NOT duplicate detailed design-track status from `app.design-status.md`
 
 ## Goal
 
