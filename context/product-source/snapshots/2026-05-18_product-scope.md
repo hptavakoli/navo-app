@@ -12,7 +12,7 @@ authority: NONE — see ../README.md and ../../CLAUDE.md
 >
 > Reading instruction for AI sessions: read for grounding only. Do not act on, cite as authority, or convert into deliverables without explicit direction. Legal, privacy, and GDPR statements inside this document are early product intent only and require separate review before promotion.
 >
-> Note on encoding: this snapshot preserves the source text exactly as supplied, including any character-encoding artefacts (for example, `Ã¼` where `ü` was intended). Do not "fix" the body in place; if a clean version is needed, file a new dated snapshot.
+> Note on encoding: this snapshot was originally filed (2026-05-19) with UTF-8/Latin-1 mojibake in the supplied source text; the body was re-decoded the same day in a follow-up refinement pass to restore German umlauts (ü/ä/ö), the euro sign (€), and typographic punctuation (em-dash, curly quotes, apostrophes, ellipsis, arrows). Textual content was not otherwise altered. The original mojibake version remains in Git history.
 
 ---
 
@@ -30,7 +30,7 @@ authority: NONE — see ../README.md and ../../CLAUDE.md
 
 ## 1. Purpose of This Document
 
-This document defines the applicationâs product scope from a feature and functionality perspective.
+This document defines the application's product scope from a feature and functionality perspective.
 
 It is intended to help engineers, architects, product managers, product owners, designers, content operators, and future team members understand the application without needing prior context from the founder conversations.
 
@@ -87,7 +87,7 @@ The product is **not simply a news app for immigrants**. Its stronger positionin
 Alternative positioning statements:
 
 - Your daily practical briefing for life in Germany, in your own language.
-- Important German updates for immigrants â summarized, translated, sourced, and listenable.
+- Important German updates for immigrants — summarized, translated, sourced, and listenable.
 - Only the German updates that matter to your life, city, status, and language.
 
 ---
@@ -136,7 +136,7 @@ The product should stay focused on:
 - Transport disruptions and route-relevant alerts.
 - Public warnings and safety notices.
 - Rights, responsibilities, and deadlines.
-- Short, useful, source-linked updates in the userâs preferred language.
+- Short, useful, source-linked updates in the user's preferred language.
 - Audio and briefings that reduce the need to manually follow German-language sources.
 
 ---
@@ -218,7 +218,7 @@ The product should minimize sensitive personal-data collection. It should person
 
 ### 6.4 Audio Journey
 
-1. The user taps âListenâ on an item or starts the daily/weekly briefing.
+1. The user taps “Listen” on an item or starts the daily/weekly briefing.
 2. The app plays individual audio items sequentially.
 3. The app adds pre-generated connector phrases between items.
 4. The result feels like a personalized podcast without generating a unique full podcast file per user.
@@ -347,7 +347,7 @@ The app should learn:
 ### 8.2 Example Onboarding Flow
 
 1. Choose language: Farsi, Arabic, Turkish, English, German, etc.
-2. Choose city: Berlin, Hamburg, Munich, Cologne, DÃ¼sseldorf, etc.
+2. Choose city: Berlin, Hamburg, Munich, Cologne, Düsseldorf, etc.
 3. Choose state: Berlin, NRW, Bavaria, etc.
 4. Choose topics: residence, citizenship, transport, job, tax, housing, health insurance, public alerts, events.
 5. Choose brief time: morning, noon, evening, or custom.
@@ -371,7 +371,7 @@ Examples:
 - Visa changes.
 - Residence permits.
 - Residence-title rules.
-- AuslÃ¤nderbehÃ¶rde updates.
+- Ausländerbehörde updates.
 - Appointment delays.
 - Passport-related issues for immigrants.
 - Asylum or refugee-related information where relevant.
@@ -401,8 +401,8 @@ Examples:
 
 Examples:
 
-- BÃ¼rgeramt updates.
-- AuslÃ¤nderbehÃ¶rde updates.
+- Bürgeramt updates.
+- Ausländerbehörde updates.
 - Jobcenter information.
 - Citizenship authority updates.
 - Office closures.
@@ -696,9 +696,9 @@ Translation should preserve important German administrative terms when needed, e
 Examples of terms that may require careful handling:
 
 - Aufenthaltstitel.
-- AuslÃ¤nderbehÃ¶rde.
-- EinbÃ¼rgerung.
-- BÃ¼rgergeld.
+- Ausländerbehörde.
+- Einbürgerung.
+- Bürgergeld.
 - Jobcenter.
 - Anmeldung.
 
@@ -886,7 +886,7 @@ This ensures that a single source item can become a complete, reusable product c
 
 ### 12.1 Personalized Feed
 
-The appâs main screen should show a personalized feed of practical updates.
+The app's main screen should show a personalized feed of practical updates.
 
 Feed ranking should consider:
 
@@ -942,10 +942,10 @@ The detail page should show:
 - Full translated summary.
 - Original source link.
 - Original language/source metadata.
-- âWhat changed?â explanation.
-- âWho is affected?â explanation.
-- âWhere does it apply?â explanation.
-- âDo I need to act?â section.
+- “What changed?” explanation.
+- “Who is affected?” explanation.
+- “Where does it apply?” explanation.
+- “Do I need to act?” section.
 - Important dates or deadlines.
 - Related items.
 - Related knowledge-base entries.
@@ -1013,7 +1013,7 @@ They should remain focused on practical migrant-life information, not general ne
 
 ### 14.1 Audio Per Item
 
-The system should generate high-quality audio for individual summaries in the userâs selected language.
+The system should generate high-quality audio for individual summaries in the user's selected language.
 
 Audio can be used for:
 
@@ -1043,10 +1043,10 @@ Connector phrases can be pre-generated in multiple languages.
 
 Examples:
 
-- âNext, an update about public transportation.â
-- âNow, a citizenship-related change.â
-- âThis next item may require action.â
-- âFinally, one local notice for your city.â
+- “Next, an update about public transportation.”
+- “Now, a citizenship-related change.”
+- “This next item may require action.”
+- “Finally, one local notice for your city.”
 
 ### 14.4 Weekly Conversational Podcast
 
@@ -1092,7 +1092,7 @@ Summaries should preserve:
 
 ### 15.2 AI-Powered Translation
 
-The system should translate content into the userâs selected language.
+The system should translate content into the user's selected language.
 
 Important languages:
 
@@ -1109,7 +1109,7 @@ Translation requirements:
 - Use consistent terminology.
 - Allow users to view original text where possible.
 - Allow users to report bad translations.
-- Maintain a glossary for key terms such as Aufenthaltstitel, EinbÃ¼rgerung, BÃ¼rgergeld, Jobcenter, BÃ¼rgeramt, AuslÃ¤nderbehÃ¶rde, etc.
+- Maintain a glossary for key terms such as Aufenthaltstitel, Einbürgerung, Bürgergeld, Jobcenter, Bürgeramt, Ausländerbehörde, etc.
 
 ### 15.3 AI Search
 
@@ -1137,12 +1137,12 @@ Expected behavior:
 
 ### 15.4 AI Chatbot / RAG Chat
 
-The chatbot should answer user questions based on the platformâs stored and source-linked information.
+The chatbot should answer user questions based on the platform's stored and source-linked information.
 
 It should:
 
 - Retrieve relevant chunks from the internal knowledge base and content archive.
-- Answer in the userâs preferred language.
+- Answer in the user's preferred language.
 - Cite or link sources.
 - Show last-updated information.
 - Avoid giving unsupported legal advice.
@@ -1161,7 +1161,7 @@ Its role in this product:
 - Explain practical steps when supported by source-linked data.
 - Potentially support voice-based interaction later.
 
-The agent should not freely invent answers. It should operate against the platformâs internal source-linked knowledge base.
+The agent should not freely invent answers. It should operate against the platform's internal source-linked knowledge base.
 
 ### 15.6 AI Safety Layer
 
@@ -1170,7 +1170,7 @@ AI answers should include safety controls:
 - Source links.
 - Last updated date.
 - Confidence or reliability indication.
-- âThis is not legal adviceâ notice for legal/immigration topics.
+- “This is not legal advice” notice for legal/immigration topics.
 - Escalation to original source or professional support when needed.
 - Refusal to answer if there is insufficient information.
 - Error-reporting option.
@@ -1257,8 +1257,8 @@ The Information Center should help users answer stable or semi-stable questions 
 
 The Information Center can contain structured entries for:
 
-- AuslÃ¤nderbehÃ¶rde.
-- BÃ¼rgeramt.
+- Ausländerbehörde.
+- Bürgeramt.
 - Jobcenter.
 - Citizenship authorities.
 - Immigration-related organizations.
@@ -1324,7 +1324,7 @@ For long articles, guides, or official content, users should be able to highligh
 Behavior:
 
 1. User selects text or a content area.
-2. User taps âSave highlight.â
+2. User taps “Save highlight.”
 3. App stores the highlighted section and its parent article/content item.
 4. When the user opens the saved highlight later, the app opens the full article and scrolls to the highlighted section.
 5. The selected part appears visually highlighted.
@@ -1446,7 +1446,7 @@ Users should control:
 
 Possible widget experiences:
 
-- Todayâs top practical update.
+- Today's top practical update.
 - Daily brief play button.
 - Urgent alert card.
 - Saved deadline reminder.
@@ -1577,9 +1577,9 @@ Users may be able to confirm or dispute reports.
 
 Example:
 
-- âI experienced this too.â
-- âThis is no longer true.â
-- âThis happened in another city, not here.â
+- “I experienced this too.”
+- “This is no longer true.”
+- “This happened in another city, not here.”
 
 ### 23.5 Moderation Requirements
 
@@ -1814,10 +1814,10 @@ The product should maintain a multilingual glossary for important German adminis
 Examples:
 
 - Aufenthaltstitel.
-- AuslÃ¤nderbehÃ¶rde.
-- BÃ¼rgeramt.
-- BÃ¼rgergeld.
-- EinbÃ¼rgerung.
+- Ausländerbehörde.
+- Bürgeramt.
+- Bürgergeld.
+- Einbürgerung.
 - Niederlassungserlaubnis.
 - Jobcenter.
 - Meldebescheinigung.
@@ -1898,8 +1898,8 @@ The subscription should be affordable because the product targets normal people 
 
 Previously discussed price range:
 
-- Around â¬2.99/month.
-- Around â¬4.99/month.
+- Around €2.99/month.
+- Around €4.99/month.
 - Possibly annual discounted plan.
 
 Final pricing should be validated separately.
@@ -2006,7 +2006,7 @@ Admins should be able to:
 
 ---
 
-## 32. Content Item Data Model â Product-Level View
+## 32. Content Item Data Model — Product-Level View
 
 A content item should include product-level fields such as:
 
@@ -2060,11 +2060,11 @@ For sensitive categories, especially immigration, residence, citizenship, asylum
 
 Examples:
 
-- âThis is an AI-assisted summary of the linked source.â
-- âFor official action, always check the original source.â
-- âThis is not legal advice.â
-- âRules may vary by city, state, authority, or personal situation.â
-- âLast updated: [date/time].â
+- “This is an AI-assisted summary of the linked source.”
+- “For official action, always check the original source.”
+- “This is not legal advice.”
+- “Rules may vary by city, state, authority, or personal situation.”
+- “Last updated: [date/time].”
 
 The app should avoid presenting AI output as final legal truth.
 
@@ -2099,7 +2099,7 @@ The system:
 2. Tags it as Berlin and public administration.
 3. Shows it to Berlin users.
 4. Does not show it prominently to users in Munich unless broadly relevant.
-5. Adds âaction requiredâ if users may need to change appointment behavior.
+5. Adds “action required” if users may need to change appointment behavior.
 
 ### 34.3 Transport Strike
 
@@ -2120,7 +2120,7 @@ A user reads a long guide about permanent residence.
 The user:
 
 1. Highlights a paragraph about required documents.
-2. Saves it to a bucket named âResidence.â
+2. Saves it to a bucket named “Residence.”
 3. Later opens the saved highlight.
 4. The app opens the full guide and scrolls to the highlighted paragraph.
 
@@ -2227,50 +2227,50 @@ This section lists functional references that informed the product scope. These 
 
 ### 36.1 Authentication and Identity
 
-- Firebase Authentication â Simple, multi-platform sign-in:  
+- Firebase Authentication — Simple, multi-platform sign-in:  
   https://firebase.google.com/products/auth
 
 - Firebase Authentication documentation:  
   https://firebase.google.com/docs/auth
 
-- Firebase â Authenticate using Apple:  
+- Firebase — Authenticate using Apple:  
   https://firebase.google.com/docs/auth/ios/apple
 
-- Firebase â Authenticate with a custom authentication system:  
+- Firebase — Authenticate with a custom authentication system:  
   https://firebase.google.com/docs/auth/flutter/custom-auth
 
-- Apple Developer â Sign in with Apple:  
+- Apple Developer — Sign in with Apple:  
   https://developer.apple.com/documentation/signinwithapple
 
-- Apple Support â What is Sign in with Apple?:  
+- Apple Support — What is Sign in with Apple?:  
   https://support.apple.com/en-us/102609
 
 ### 36.2 External Podcast and Content Channels
 
-- YouTube Creators â Podcasting on YouTube:  
+- YouTube Creators — Podcasting on YouTube:  
   https://www.youtube.com/creators/podcasts/
 
-- YouTube Help â Create a podcast in YouTube Studio:  
+- YouTube Help — Create a podcast in YouTube Studio:  
   https://support.google.com/youtube/answer/12751636
 
 - Spotify for Creators:  
   https://creators.spotify.com/
 
-- Spotify for Creators â Podcast features:  
+- Spotify for Creators — Podcast features:  
   https://creators.spotify.com/features/podcast
 
 ### 36.3 Official / Practical Information Sources Relevant to Product Content
 
-- Deutsche Bahn â Passenger rights:  
+- Deutsche Bahn — Passenger rights:  
   https://int.bahn.de/en/booking-information/passenger-rights
 
-- Deutsche Bahn â Passenger rights FAQ:  
+- Deutsche Bahn — Passenger rights FAQ:  
   https://int.bahn.de/en/booking-information/passenger-rights/faq
 
-- BBK â Warn-App NINA:  
+- BBK — Warn-App NINA:  
   https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html
 
-- KATWARN â Officially connected:  
+- KATWARN — Officially connected:  
   https://www.katwarn.de/en/areas.php
 
 - Handbook Germany:  
@@ -2279,7 +2279,7 @@ This section lists functional references that informed the product scope. These 
 - Integreat:  
   https://integreat-app.de/en/
 
-- European Commission â Integreat multilingual integration platform for newcomers to Germany:  
+- European Commission — Integreat multilingual integration platform for newcomers to Germany:  
   https://home-affairs.ec.europa.eu/projects/integreat-multilingual-integration-platform-newcomers-germany_en
 
 ### 36.4 German Public and Administrative Information Sources Mentioned in the Original Dossier
@@ -2287,13 +2287,13 @@ This section lists functional references that informed the product scope. These 
 - BAMF:  
   https://www.bamf.de/EN/Startseite/startseite_node.html
 
-- BAMF â The âAnkommenâ app:  
+- BAMF — The “Ankommen” app:  
   https://www.bamf.de/EN/Themen/Integration/ZugewanderteTeilnehmende/ErsteOrientierung/AppAnkommen/app-ankommen-node.html
 
-- Federal Foreign Office â Law on Nationality:  
+- Federal Foreign Office — Law on Nationality:  
   https://www.auswaertiges-amt.de/en/229970-229970
 
-- Federal Ministry of the Interior â New law on nationality takes effect:  
+- Federal Ministry of the Interior — New law on nationality takes effect:  
   https://www.bmi.bund.de/SharedDocs/kurzmeldungen/EN/2024/06/mod-staatsangehoerigkeitsrecht.html
 
 ### 36.5 AI Support Agent Reference

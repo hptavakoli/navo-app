@@ -11,6 +11,8 @@ authority: NONE — see ../README.md and ../../CLAUDE.md
 > Promotion path: insights are synthesised into `docs/05-product-context.md`, `docs/06-feature-blueprint.md`, `docs/07-technical-direction.md`, ADRs, or milestone work-package task files **only through an explicit planning conversation** with the product owner. Presence here does not promote anything.
 >
 > Reading instruction for AI sessions: read for grounding only. Do not act on, cite as authority, or convert into deliverables without explicit direction. Legal, privacy, and GDPR statements inside this document are early product intent only and require separate review before promotion.
+>
+> Note on encoding: this snapshot was originally filed (2026-05-19) with UTF-8/Latin-1 mojibake in the supplied source text (apostrophes and the diagram arrows in particular); the body was re-decoded the same day in a follow-up refinement pass to restore typographic punctuation (em-dash, curly quotes, apostrophes, ellipsis, arrows). Textual content was not otherwise altered. The original mojibake version remains in Git history.
 
 > **Tech-proposal-specific warning.** This document names concrete frameworks and providers (Flutter, Next.js, NestJS, PostgreSQL, OpenSearch, Redis / BullMQ, FCM, RevenueCat / Stripe, PostHog, separate AI services). These choices align with each repo's currently *proposed* direction, but **alignment is not approval**. None of these are adopted until validated through the normal `01-foundation` research and ADR process in each repo (framework-validation ADR, data/ORM ADR, search-strategy ADR, auth ADR, hosting/deployment research, etc.). The "modular monolith first" and "clients never talk to OpenSearch directly" architectural claims in this document are similarly unadopted until promoted via ADR.
 
@@ -132,7 +134,7 @@ Flutter is a good match because the product needs to ship across multiple platfo
 - Potential lock-screen/widget-related experiences
 - Future desktop availability
 
-Flutterâs value here is mainly speed of cross-platform product delivery from a shared codebase.
+Flutter's value here is mainly speed of cross-platform product delivery from a shared codebase.
 
 The official Flutter site describes Flutter as an open-source framework for building natively compiled, multi-platform applications from a single codebase, including mobile, web, desktop, and embedded experiences.  
 Reference: https://flutter.dev/
@@ -189,7 +191,7 @@ Reference: https://nextjs.org/docs/pages/guides/incremental-static-regeneration
 
 ### Why not WordPress
 
-WordPress was explicitly set aside. The productâs content pipeline is expected to become automated through backend APIs and AI agents rather than manual editorial publishing through a traditional CMS.
+WordPress was explicitly set aside. The product's content pipeline is expected to become automated through backend APIs and AI agents rather than manual editorial publishing through a traditional CMS.
 
 ### Why not Flutter Web for the public website
 
@@ -197,7 +199,7 @@ Flutter Web may be acceptable for the logged-in app, but it is not the preferred
 
 ### Alternative considered: Astro
 
-Astro is a strong alternative for mostly static, content-driven sites. It may be simpler and faster for a purely static blog/landing site. However, the productâs public site may become a dynamic product surface with language/city/category routes, API-triggered updates, audio previews, content previews, and structured SEO/AEO pages. For that reason, Next.js is preferred.
+Astro is a strong alternative for mostly static, content-driven sites. It may be simpler and faster for a purely static blog/landing site. However, the product's public site may become a dynamic product surface with language/city/category routes, API-triggered updates, audio previews, content previews, and structured SEO/AEO pages. For that reason, Next.js is preferred.
 
 ---
 
@@ -383,7 +385,7 @@ NoSQL was considered conceptually but is not preferred because the product has m
 
 Use of an ORM is likely, but final selection is not locked. Prisma is a strong candidate because it is TypeScript-native and has official NestJS guidance.
 
-Prismaâs NestJS guide covers Prisma ORM and Prisma Postgres usage with NestJS.  
+Prisma's NestJS guide covers Prisma ORM and Prisma Postgres usage with NestJS.  
 Reference: https://www.prisma.io/docs/guides/frameworks/nestjs
 
 NestJS also has an official Prisma recipe.  
@@ -739,18 +741,18 @@ Agents should call controlled NestJS ingestion APIs.
 
 ```text
 Hermes / AI Agent
-â NestJS Ingestion API
-â PostgreSQL source-of-truth storage
-â Queue/indexing jobs
-â OpenSearch indexing
-â App/website consumption
+→ NestJS Ingestion API
+→ PostgreSQL source-of-truth storage
+→ Queue/indexing jobs
+→ OpenSearch indexing
+→ App/website consumption
 ```
 
 This keeps the AI pipeline separate from product/user/security logic.
 
 ### Possible AI-service framework
 
-Python/FastAPI remains a strong option for internal AI services because of Pythonâs ML/AI ecosystem. It is not selected as the core product backend, but may be selected for AI processing services.
+Python/FastAPI remains a strong option for internal AI services because of Python's ML/AI ecosystem. It is not selected as the core product backend, but may be selected for AI processing services.
 
 ---
 
