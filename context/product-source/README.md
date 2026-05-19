@@ -62,3 +62,18 @@ The user authors `outline.md` as the project-level master outline, then creates 
 - `outline.md` and `sections/*.md` here → consolidated into [`../../docs/05-product-context.md`](../../docs/05-product-context.md), [`../../docs/06-feature-blueprint.md`](../../docs/06-feature-blueprint.md), and [`../../docs/07-technical-direction.md`](../../docs/07-technical-direction.md) over time.
 - The transformation is one-way; refined docs supersede the ideation for AI sessions that need authority.
 - Source documents stay in place as historical context; they are not deleted when refined docs supersede them.
+
+---
+
+## Frozen snapshots
+
+Source material supplied to the project as **frozen, banner-prefixed dated snapshots** lives under [`snapshots/`](snapshots/), not at the root of this folder. This distinguishes user-authored ideation ([`outline.md`](outline.md) + [`sections/`](sections/)) from third-party-supplied snapshots that are not edited in place. See [`snapshots/README.md`](snapshots/README.md) for the snapshot-specific rule.
+
+Current snapshots:
+
+- [`snapshots/2026-05-18_product-scope.md`](snapshots/2026-05-18_product-scope.md) — early product-scope document; founder-supplied; ingested 2026-05-19. Non-authority.
+- [`snapshots/2026-05-18_technology-proposal.md`](snapshots/2026-05-18_technology-proposal.md) — early primary-stack proposal; founder-supplied; ingested 2026-05-19. Non-authority; technology alignment ≠ ADR approval.
+
+## Repo-specific caveats for these snapshots
+
+Many features described in the product-scope snapshot (feed, search, audio, calendar, notifications, transport alerts, public sharing) span app/website/backend boundaries. Ownership splits between this repo and `navo-website` / `navo-backend` are not resolved in the source documents and must be settled by ADR during `01-foundation`. Do not derive app-side tasks from the product-scope snapshot without an explicit planning conversation that confirms the surface ownership.

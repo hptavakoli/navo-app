@@ -124,3 +124,4 @@ Total uploads at current state: 7 files. After design tracks activate: 10 files.
 - 2026-05-19 → `navo-app` bootstrapped from foundation template; first commit `9a168a9`.
 - 2026-05-19 → ChatGPT resource files renamed with `app.` scope prefix for shared-Project compatibility; commit `4ec6f25`.
 - 2026-05-19 → Shared ChatGPT resources (`communication.*`, `playbooks.workflows.md`, `user-environment.md`) restored to scope-agnostic `<scope>` form; byte-identical across the three repos; commit `12d4d95`.
+- 2026-05-19 → Early-context source documents (product scope; technology proposal, dated 2026-05-18) filed under `context/product-source/snapshots/` as frozen non-authority snapshots. See `context/product-source/README.md`.
