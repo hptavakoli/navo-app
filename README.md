@@ -18,6 +18,8 @@ Navo App is one of three repositories that make up the Navo product:
 
 The three repositories are independently maintained and communicate over network protocols. This repo owns the user-facing application experience: onboarding and preferences, personalised feed and detail views, audio-first listening, search/AI-assist UX, bookmarks/buckets/highlights/notes, notifications and reminders, account/entitlement surfaces, and trust/safety/localisation UX. Backend product logic, public website surfaces, and external content/data creation are explicitly out of scope.
 
+Workspace-level coordination (cross-repo roadmap, prompts, workspace notes, planning context) lives at [`navo-workspace`](https://github.com/hptavakoli/navo-workspace) — non-authoritative; this repo remains the source of truth for its own code, ADRs, and milestones.
+
 Detailed framing lives in [`docs/05-product-context.md`](docs/05-product-context.md).
 
 ## Getting started
