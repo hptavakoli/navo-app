@@ -8,15 +8,12 @@ For the discipline behind this file (when to add entries, what kinds of changes 
 
 ## [Unreleased]
 
-<!--
-Append curated entries here as work lands. Sections to use as needed:
+### Changed — ChatGPT resource layout
 
-### Added — <short label>
-### Changed — <short label>
-### Deprecated — <short label>
-### Removed — <short label>
-### Fixed — <short label>
-### Security — <short label>
+- Per-repo project-state and design-status files renamed with `<scope>.` prefix (`app.project-state.md`, `app.design-status.md`) so they can coexist in a single shared Navo ChatGPT Project alongside the parallel files from the other two Navo repos. Other in-repo references updated accordingly.
+- Shared ChatGPT resource files (`communication.claude.md`, `communication.general.md`, `playbooks.workflows.md`, `user-environment.md`) restored to scope-agnostic form using a `<scope>` placeholder, so a single upload of each shared file applies to all three Navo repos in the shared ChatGPT Project. `<scope>` convention documented in `communication.general.md` §7.
+- `playbooks.workflows.md` title harmonized from `Workflows — Navo App` to `Workflows — Navo` to match shared status.
 
-At release time, the entire [Unreleased] block moves into a new [vX.Y.Z] — YYYY-MM-DD — <label> section, and [Unreleased] is reset to empty.
--->
+### Changed — Project-state cold-start readiness
+
+- `chat/resources/app.project-state.md` promoted from template scaffold to first-use cold-start snapshot. Captures current repo status, bootstrap and resource-cleanup history, current `01-foundation` milestone state, next recommended action, key decisions, external pipeline / Hermes boundary, open questions, and the shared-Project upload set. Project Overview and Operational Constraints sections preserved.
