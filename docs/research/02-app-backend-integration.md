@@ -1,11 +1,11 @@
 # Research topic 02 — App ↔ backend integration
 
-**Status:** Active research
+**Status:** Cited (immutable)
 **Date:** 2026-05-19
-**Cited by syntheses:** —
+**Cited by syntheses:** [v1-foundation-direction.md](v1-foundation-direction.md)
 **Superseded by:** —
 
-> Once this document is cited by a synthesis, status moves to `Cited (immutable)` and the file becomes read-only. Errata go in a new research file with a `Supersedes:` pointer.
+> **This document is cited by [v1-foundation-direction.md](v1-foundation-direction.md) and is therefore immutable.** Errata go in a new research file with a `Supersedes:` pointer, not as edits here.
 
 ---
 
