@@ -6,7 +6,7 @@
 - **When to use:** between Claude's orientation report and Claude's planning conversation, when you want ChatGPT to generate the planning prompt.
 - **Target AI:** ChatGPT.
 - **Input:** Claude's orientation report — paste it into the marker block in the prompt body.
-- **Output:** alignment check (Farsi, brief) plus a final English planning prompt for Claude in a Writing Block.
+- **Output:** alignment check (Farsi, brief) plus a final English planning prompt for Claude delivered as a ChatGPT Canvas document (or equivalent editable single-document panel).
 
 --- COPY FROM BELOW (after pasting Claude's orientation report into the marker block) ---
 
@@ -76,7 +76,7 @@ The prompt MUST:
 
 ### 2) Prompt for Claude (English, final only)
 - Provide **only the final prompt** to send to Claude.
-- Place the prompt inside a Writing Block with `variant="chat_message"` so it can be easily copied.
+- Deliver it as a ChatGPT Canvas document (or equivalent editable single-document panel) so the user can copy it cleanly; the canvas body must contain only the prompt itself — no preamble, no commentary.
 
 ## Prompt shape (guide)
 

@@ -65,7 +65,7 @@ Templates copied and pasted into chat sessions.
 - `execution/` — work-package closure.
 - `review/` — audit run (auditor) → audit evaluation (ChatGPT) → audit response (ChatGPT).
 
-Each template is recipient-aware: Claude-targeted prompts use command-style English; ChatGPT-targeted prompts include the Farsi-explanation and Writing Block conventions; auditor-targeted prompts use deterministic-validator framing.
+Each template is recipient-aware: Claude-targeted prompts use command-style English; ChatGPT-targeted prompts use Farsi for in-thread explanation and deliver Claude-bound outputs as ChatGPT Canvas documents (or equivalent editable single-document panels); auditor-targeted prompts use deterministic-validator framing.
 
 ---
 

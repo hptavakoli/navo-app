@@ -6,7 +6,7 @@
 - **When to use:** in design-oriented sessions, between Claude's orientation report and the next design-track action.
 - **Target AI:** ChatGPT.
 - **Input:** Claude's orientation / status report — paste it into the marker block in the prompt body.
-- **Output:** alignment check + next-step assessment (Farsi, brief), and (only if appropriate) a final English design-track prompt for Claude in a Writing Block.
+- **Output:** alignment check + next-step assessment (Farsi, brief), and (only if appropriate) a final English design-track prompt for Claude delivered as a ChatGPT Canvas document (or equivalent editable single-document panel).
 
 --- COPY FROM BELOW (after pasting Claude's report into the marker block) ---
 
@@ -90,7 +90,7 @@ Use the smallest appropriate type:
 ### 3) Prompt for Claude (English, only if appropriate)
 - Provide only one final prompt
 - Follow `communication.claude.md` rules
-- Place it inside a Writing Block with `variant="chat_message"` so it can be easily copied
+- Deliver it as a ChatGPT Canvas document (or equivalent editable single-document panel) so the user can copy it cleanly; the canvas body must contain only the prompt itself — no preamble, no commentary
 - If no prompt is appropriate yet, omit this section or state that no Claude prompt should be generated yet
 
 ## Prompt shape (guide)

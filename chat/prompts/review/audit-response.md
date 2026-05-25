@@ -6,7 +6,7 @@
 - **When to use:** after `audit-evaluation.md` has produced its assessment and you've decided which points are worth surfacing to Claude.
 - **Target AI:** ChatGPT.
 - **Input:** Claude's implementation report, the auditor's audit report, and any decisions / clarifications from the audit-evaluation conversation — all already present in the current ChatGPT conversation context. No paste needed.
-- **Output:** a single English message in a Writing Block, ready to copy and send to Claude. Neutral observations / questions, not directive instructions.
+- **Output:** a single English message delivered as a ChatGPT Canvas document (or equivalent editable single-document panel), ready to copy and send to Claude. Neutral observations / questions, not directive instructions.
 
 --- COPY FROM BELOW ---
 
@@ -36,7 +36,7 @@ You MUST:
 
 ## Output (STRICT)
 
-Produce one clean message in a Writing Block with `variant="chat_message"` so it can be copied directly to Claude. No explanations or meta text outside the Writing Block.
+Produce one clean message delivered as a ChatGPT Canvas document (or equivalent editable single-document panel) so it can be copied directly to Claude. The canvas body must contain only the message itself — no explanations or meta text outside the canvas.
 
 The message body should follow this shape (adapt phrasing as needed):
 
