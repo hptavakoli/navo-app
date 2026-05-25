@@ -99,14 +99,27 @@ After Claude's cold-start onboarding produces an orientation report with `Projec
 |---|---|
 | `milestone-pending` | [`prompts/workflows/claude-milestone-opening-bridge.md`](prompts/workflows/claude-milestone-opening-bridge.md) — opens the next milestone (sub-routes for `not-created` / `roadmap-pending` / `opening-ready`, read from the orientation report's `Milestone-pending sub-state:` field) |
 | `milestone-open-no-wp` | [`prompts/workflows/claude-planning-bridge.md`](prompts/workflows/claude-planning-bridge.md) — drafts the next WP's task file (sub-routes `wp-draft` / `wp-select-then-draft`, determined by whether `Next work package:` is concrete or `undefined`) |
-| `wp-drafting` | Continue in-session — no bridge needed; finish drafting the task file and freeze it |
+| `wp-drafting` | Continue in-session — no bridge needed; finish drafting and freeze the task file. To end the planning session cleanly after freeze (handoff to a fresh implementation session), use [`prompts/execution/planning-session-close.md`](prompts/execution/planning-session-close.md) — see "Closure prompts" below |
 | `wp-frozen` | [`prompts/workflows/claude-implementation-bridge.md`](prompts/workflows/claude-implementation-bridge.md) — executes the frozen WP |
-| `wp-executing` | Continue in-session if the session is already executing; use [`prompts/workflows/claude-implementation-bridge.md`](prompts/workflows/claude-implementation-bridge.md) if a previous session left work mid-execution and you're picking up cold |
+| `wp-executing` | Continue in-session if the session is already executing; use [`prompts/workflows/claude-implementation-bridge.md`](prompts/workflows/claude-implementation-bridge.md) if a previous session left work mid-execution and you're picking up cold. To end the implementation session cleanly mid-WP (after completing a clean subset of tasks), use [`prompts/execution/implementation-session-close.md`](prompts/execution/implementation-session-close.md) — see "Closure prompts" below |
 | `wp-closing` | [`prompts/workflows/session-closure-sync.md`](prompts/workflows/session-closure-sync.md) — synchronizes project-state docs at closure |
 | `milestone-closing` | [`prompts/workflows/session-closure-sync.md`](prompts/workflows/session-closure-sync.md) — same; the final WP's closure triggers the milestone close |
 | `unknown` | Have Claude re-orient with a discrete `Project state` value; no bridge fires |
 
 Each bridge validates `Project state` and aborts (with explicit redirect) if the state does not match its expected value. ChatGPT works from Claude's orientation report plus the resources uploaded to its session; it does not inspect the repo directly. When a needed fact is missing from the orientation report, the bridge either asks Claude to re-orient or instructs the generated prompt to have Claude perform the check.
+
+### Closure prompts (session-end actions)
+
+Distinct from cold-start bridge routing above, these are session-end prompts the user pastes into Claude when wrapping up a session:
+
+| Scenario | Prompt | When to use |
+|---|---|---|
+| Planning-session close (mid-WP, post-freeze) | [`prompts/execution/planning-session-close.md`](prompts/execution/planning-session-close.md) | Task file has just been frozen; implementation should happen in a fresh Claude session |
+| Implementation-session close (mid-WP, partial) | [`prompts/execution/implementation-session-close.md`](prompts/execution/implementation-session-close.md) | A clean subset of tasks reached acceptance; WP remains active; resume the rest in a fresh Claude session |
+| Work-package close (full completion) | [`prompts/execution/work-package-close.md`](prompts/execution/work-package-close.md) | All acceptance criteria are met; the WP is being closed via the two-PR pattern in [`../docs/03-planning-model.md` §9.1](../docs/03-planning-model.md) |
+| Session-closure sync (post-merge anchor refresh) | [`prompts/workflows/session-closure-sync.md`](prompts/workflows/session-closure-sync.md) | After one or more PRs merge, an ADR is recorded, or any other event that affects cold-start anchors |
+
+The planning-session and implementation-session close prompts are **mid-WP handoffs** — they do NOT close the work package, do NOT author a readiness report, and do NOT update `CHANGELOG.md`. They leave the cold-start anchors pointing at the correct resume path.
 
 ---
 

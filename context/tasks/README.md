@@ -75,6 +75,7 @@ The matching readiness report goes at `context/sanity-checks/<NN>-<milestone-slu
 5. Update the task file if open-question resolutions change scope.
 6. The user reviews and approves.
 7. At freeze: add the `Frozen:` date. Implementation may begin only after freeze.
+8. If the planning session should end here and implementation should happen in a fresh Claude session, use [`../../chat/prompts/execution/planning-session-close.md`](../../chat/prompts/execution/planning-session-close.md) to verify the frozen task file, update the milestone README row and the `CLAUDE.md` next-step, and prepare the commit. Mid-draft pauses (no `Frozen:` yet) do NOT need a special prompt — the next session resumes in `wp-drafting`.
 
 ### Executing a work package
 
@@ -86,6 +87,7 @@ The matching readiness report goes at `context/sanity-checks/<NN>-<milestone-slu
    - Update status `in progress → done`.
 4. Never mark a task done unless its acceptance criteria are met.
 5. Never break a working rule silently — use the exception process in [`../../docs/01-working-rules.md` §11](../../docs/01-working-rules.md).
+6. If the session ends before the work package is complete (a clean subset of tasks done; WP remains active), use [`../../chat/prompts/execution/implementation-session-close.md`](../../chat/prompts/execution/implementation-session-close.md) to verify acceptance for each closed task, record a durable resume pointer in the task file `Notes`, update the `CLAUDE.md` next-step, and prepare a logical-unit commit per [`../../docs/02-git-workflow.md` §5](../../docs/02-git-workflow.md) (no WIP / per-task commits).
 
 ### Closing a work package
 

@@ -197,6 +197,9 @@ A scaffold milestone README lives at [`../context/tasks/_milestone-template/READ
 | Which doc is source of truth for X? | [`../CLAUDE.md`](../CLAUDE.md) (dispatcher) → this map |
 | What changed in `v<X.Y.Z>`? | [`../CHANGELOG.md`](../CHANGELOG.md) |
 | What's the per-package evidence for a closure? | the readiness report itself |
+| How do I cleanly close a mid-WP planning session (post-freeze handoff)? | [`../chat/prompts/execution/planning-session-close.md`](../chat/prompts/execution/planning-session-close.md) |
+| How do I cleanly close a mid-WP implementation session (partial completion)? | [`../chat/prompts/execution/implementation-session-close.md`](../chat/prompts/execution/implementation-session-close.md) |
+| How do I close a completed work package? | [`../chat/prompts/execution/work-package-close.md`](../chat/prompts/execution/work-package-close.md) |
 | What's the binding architectural decision behind X? | [`decisions/`](decisions/) (ADRs) |
 | What's the project context / purpose? | [`05-product-context.md`](05-product-context.md) |
 | What's the capability outline? | [`06-feature-blueprint.md`](06-feature-blueprint.md) |
