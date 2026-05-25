@@ -39,6 +39,7 @@ To transform a work package into a **fully specified, executable plan** before a
    - Explicit confirmation required
    - No implementation yet
    - Do NOT authorize execution; wait for explicit user approval after review
+   - To close the planning session cleanly after freeze (handing off to a fresh implementation session), use `chat/prompts/execution/planning-session-close.md` — verifies the frozen task file, updates the milestone README and `CLAUDE.md` next-step, and prepares a logical-unit commit. Mid-draft pauses (no freeze yet) do NOT need a special prompt — the next session resumes in `wp-drafting`.
 
 ---
 
@@ -64,6 +65,8 @@ To execute a work package **without discovery**, only following the frozen plan.
    - What was implemented
    - Test results
    - Any deviations
+   - For full WP completion, follow §5 (Work Package Close) and use `chat/prompts/execution/work-package-close.md`
+   - For partial completion (a clean subset of tasks done; WP remains active), close the session cleanly with `chat/prompts/execution/implementation-session-close.md` — verifies acceptance for each closed task, records a durable resume pointer in the task file Notes, updates `CLAUDE.md` next-step, and prepares a logical-unit commit (per `docs/02-git-workflow.md` §5 — no WIP / per-task commits). Resume from the next unfinished task in a fresh Claude session.
 
 5. Git operation ownership: follow `docs/02-git-workflow.md` §1.1
    - ChatGPT may help draft branch names, Conventional Commit subjects/bodies, and PR titles/bodies
