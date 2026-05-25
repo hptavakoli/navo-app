@@ -39,12 +39,12 @@ Project-side authoritative documents (live; may be ahead of this ChatGPT-side sn
 
 ## Next Action (Replace on update)
 
-Next Action: open the `01-foundation` planning conversation using the foundation synthesis at [`docs/research/v1-foundation-direction.md`](../../docs/research/v1-foundation-direction.md) and the foundation milestone README at `context/tasks/01-foundation/README.md`. The synthesis identifies app-side candidates with confidence and names the six cross-repo contracts with `navo-backend`; planning decides ordering, dependencies, parallelism, and freezes the foundation work packages.
+Next Action: open the `01-foundation` planning conversation using the foundation synthesis at [`docs/research/syntheses/v1-foundation-direction.md`](../../docs/research/syntheses/v1-foundation-direction.md) and the foundation milestone README at `context/tasks/01-foundation/README.md`. The synthesis identifies app-side candidates with confidence and names the six cross-repo contracts with `navo-backend`; planning decides ordering, dependencies, parallelism, and freezes the foundation work packages.
 
 Decision gates now known (to be authored as ADRs during `01-foundation`):
 
 - Cross-cutting (touch multiple repos): EU residency policy; license-risk / dual-licence tolerance policy. Land these first because they constrain the stack-specific ADRs.
-- App stack candidates with current direction in the synthesis: app framework (Flutter for Android/iOS first); state management / routing; localisation strategy (English/Persian first, RTL); audio player approach; push notification approach; subscription / entitlement integration. Specifics, confidence, and tradeoffs live in `docs/research/v1-foundation-direction.md`.
+- App stack candidates with current direction in the synthesis: app framework (Flutter for Android/iOS first); state management / routing; localisation strategy (English/Persian first, RTL); audio player approach; push notification approach; subscription / entitlement integration. Specifics, confidence, and tradeoffs live in `docs/research/syntheses/v1-foundation-direction.md`.
 - Cross-repo contracts (each ADR'd in both `navo-app` and `navo-backend`): API style + OpenAPI surface; token / session model; push payload; subscription receipt; audio URL signing; deep-link URL space.
 
 Do NOT auto-start. Branch creation and Git writes follow `docs/02-git-workflow.md` §1.1 (operation ownership — `navo-app` is on the approval-gated track).
@@ -89,7 +89,7 @@ Do NOT auto-start. Branch creation and Git writes follow `docs/02-git-workflow.m
 
 ## Open Questions (For `01-Foundation`)
 
-> Synthesis status (2026-05-19): the foundation synthesis at [`docs/research/v1-foundation-direction.md`](../../docs/research/v1-foundation-direction.md) proposes candidates with confidence for each item below and names the six cross-repo contracts with `navo-backend`. The items remain `open` because no ADRs have been authored yet; the synthesis is `Draft`, not `Approved`. ADRs land during `01-foundation` planning.
+> Synthesis status (2026-05-19): the foundation synthesis at [`docs/research/syntheses/v1-foundation-direction.md`](../../docs/research/syntheses/v1-foundation-direction.md) proposes candidates with confidence for each item below and names the six cross-repo contracts with `navo-backend`. The items remain `open` because no ADRs have been authored yet; the synthesis is `Draft`, not `Approved`. ADRs land during `01-foundation` planning.
 
 Repo-local — to validate or revise in `01-foundation`:
 

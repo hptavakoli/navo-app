@@ -2,7 +2,7 @@
 
 **Status:** Active research | Cited (immutable) | Superseded
 **Date:** YYYY-MM-DD
-**Cited by syntheses:** — (or `v1-<focus>-direction.md`)
+**Cited by syntheses:** — (or `syntheses/v1-<focus>-direction.md`)
 **Superseded by:** — (or `<NN>-<topic>.md`)
 
 > Once this document is cited by a synthesis, status moves to `Cited (immutable)` and the file becomes read-only. Errata go in a new research file with a `Supersedes:` pointer.

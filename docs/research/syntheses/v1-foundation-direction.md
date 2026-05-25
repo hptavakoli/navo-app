@@ -105,5 +105,5 @@ Six contracts cross repo boundaries. Each is a future cross-repo ADR.
 ## References
 
 - Topical research files cited in **Inputs** above (frozen by this commit).
-- Workspace cross-repo context: [`../../../workspace-notes.md`](../../../workspace-notes.md) (non-authoritative).
-- Related syntheses: [`../../../navo-backend/docs/research/v1-foundation-direction.md`](../../../navo-backend/docs/research/v1-foundation-direction.md), [`../../../navo-website/docs/research/v1-foundation-direction.md`](../../../navo-website/docs/research/v1-foundation-direction.md).
+- Workspace cross-repo context: [`../../../../workspace-notes.md`](../../../../workspace-notes.md) (non-authoritative).
+- Related syntheses: [`../../../../navo-backend/docs/research/syntheses/v1-foundation-direction.md`](../../../../navo-backend/docs/research/syntheses/v1-foundation-direction.md), [`../../../../navo-website/docs/research/syntheses/v1-foundation-direction.md`](../../../../navo-website/docs/research/syntheses/v1-foundation-direction.md).

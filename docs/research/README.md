@@ -30,7 +30,7 @@ open question  →  topical research  →  synthesis (versioned)  →  ADR  → 
 
 1. **Open question** identified during scoping (e.g., "which engine should we use?").
 2. **Topical research document** at `docs/research/<NN>-<topic>.md` — surveys candidates, evidence, tradeoffs.
-3. **Synthesis** at `docs/research/v1-<focus>-direction.md` — consolidates one or more research docs into a recommended direction.
+3. **Synthesis** at `docs/research/syntheses/v1-<focus>-direction.md` — consolidates one or more research docs into a recommended direction.
 4. **ADR** in [`../decisions/`](../decisions/) records the binding choice; references the synthesis.
 5. **`03-technical-direction.md`** carries the committed direction at narrative level; cites the ADR.
 
@@ -45,14 +45,26 @@ open question  →  topical research  →  synthesis (versioned)  →  ADR  → 
 
 ---
 
-## File naming
+## File naming and folder layout
 
-| Pattern | Purpose |
-|---|---|
-| `<NN>-<topic>.md` | Topical research (e.g., `01-engine-options.md`, `02-storage-options.md`) — `01..NN` numeric prefix; append-only, no renumbering |
-| `v<N>-<focus>-direction.md` | Synthesis (e.g., `v1-foundation-direction.md`); version prefix is part of the filename |
-| `_topic-template.md` | Scaffold for a new research topic |
-| `_synthesis-template.md` | Scaffold for a new synthesis |
+Topical research files live flat in `docs/research/`; synthesis outputs live in `docs/research/syntheses/`. The split keeps the append-only evidence list separate from the versioned consolidated direction, so each grows on its own axis without crowding the other.
+
+```
+docs/research/
+├── README.md
+├── _topic-template.md
+├── <NN>-<topic>.md             # topical research (flat, append-only)
+└── syntheses/
+    ├── _synthesis-template.md
+    └── v<N>-<focus>-direction.md  # versioned synthesis per focus
+```
+
+| Pattern | Location | Purpose |
+|---|---|---|
+| `<NN>-<topic>.md` | `docs/research/` | Topical research (e.g., `01-engine-options.md`, `02-storage-options.md`) — `01..NN` numeric prefix; append-only, no renumbering |
+| `v<N>-<focus>-direction.md` | `docs/research/syntheses/` | Synthesis (e.g., `syntheses/v1-foundation-direction.md`); version prefix is part of the filename |
+| `_topic-template.md` | `docs/research/` | Scaffold for a new research topic |
+| `_synthesis-template.md` | `docs/research/syntheses/` | Scaffold for a new synthesis |
 
 The leading underscore on template files keeps them sorted to the top of filesystem listings and signals "scaffold, not content."
 

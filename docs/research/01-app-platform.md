@@ -2,10 +2,10 @@
 
 **Status:** Cited (immutable)
 **Date:** 2026-05-19
-**Cited by syntheses:** [v1-foundation-direction.md](v1-foundation-direction.md)
+**Cited by syntheses:** [v1-foundation-direction.md](syntheses/v1-foundation-direction.md)
 **Superseded by:** —
 
-> **This document is cited by [v1-foundation-direction.md](v1-foundation-direction.md) and is therefore immutable.** Errata go in a new research file with a `Supersedes:` pointer, not as edits here.
+> **This document is cited by [v1-foundation-direction.md](syntheses/v1-foundation-direction.md) and is therefore immutable.** Errata go in a new research file with a `Supersedes:` pointer, not as edits here.
 
 ---
 
