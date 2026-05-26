@@ -122,7 +122,7 @@ Never silently infer missing details.
 Note:
 - File naming follows ChatGPT resource limitations (no folder structure)
 - File names are treated as flat identifiers
-- `<scope>` placeholder: in resource filenames, `<scope>` denotes the active repo (one of `backend`, `app`, or `website`). For example, `<scope>.project-state.md` resolves to `backend.project-state.md` for navo-backend sessions, `app.project-state.md` for navo-app sessions, and `website.project-state.md` for navo-website sessions.
+- `<scope>` placeholder: in resource filenames, `<scope>` denotes the active repo (one of `backend`, `app`, `website`, `content`, or `directory`). For example, `<scope>.project-state.md` resolves to `backend.project-state.md` for navo-backend sessions, `app.project-state.md` for navo-app sessions, `website.project-state.md` for navo-website sessions, `content.project-state.md` for navo-content sessions, and `directory.project-state.md` for navo-directory sessions.
 
 ---
 
