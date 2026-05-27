@@ -123,10 +123,12 @@ Single shared Navo ChatGPT Project carries the following resources. From this re
   - `backend.project-state.md` (from `navo-backend/chat/resources/`)
   - `app.project-state.md` (this file, from `navo-app/chat/resources/`)
   - `website.project-state.md` (from `navo-website/chat/resources/`)
-- Deferred until each design track activates (per-repo, one upload each):
-  - `backend.design-status.md`, `app.design-status.md`, `website.design-status.md`
+  - `content.project-state.md` (from `navo-content/chat/resources/`)
+  - `directory.project-state.md` (from `navo-directory/chat/resources/`)
+- Deferred until each design track activates (per-repo, one upload each — upload only when the corresponding `<scope>.design-status.md` is present in the repo):
+  - `backend.design-status.md`, `app.design-status.md`, `website.design-status.md`, `content.design-status.md`, `directory.design-status.md`
 
-Total uploads at current state: 7 files. After design tracks activate: 10 files.
+Total uploads at current state: 9 files. After all design tracks activate: 14 files.
 
 ---
 
