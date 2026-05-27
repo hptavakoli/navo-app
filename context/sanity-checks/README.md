@@ -49,16 +49,16 @@ A readiness report covers, at minimum:
 
 4. **Per-task outcomes** — table or bulleted list mapping each task in the task file (or each acceptance criterion if the task file is lightweight) to PASS / FAIL / N/A with a short note. Reference specific files, commits, or evidence artifacts.
 
-5. **Doctrine validation** — outcomes against the work package's declared `Doctrine touchpoints` (per the frozen task file). Non-blocking by default; deltas surface for product-owner decision but do not block closure unless a proposal is explicitly marked `gating`.
+5. **Doctrine validation** — record the outcome of the work package's declared `Doctrine touchpoints` (per the frozen task file). Non-blocking by default; surfaces deltas for product-owner decision unless explicitly marked `gating`.
 
-   **§5a Touchpoint validation.** For each declared touchpoint in the task file's Doctrine touchpoints section, record one of:
-   - `validated` — the work conformed to the doctrine entry as currently stated.
-   - `deviated (touchpoint mismatch)` — the work touched a doctrine area not declared in the task file. Note the area; route as a touchpoint-deviation finding.
-   - `incidental violation` — the work conflicted with current doctrine but did not declare the touchpoint. Note the affected doctrine entry; route as an incidental-violation finding.
-   - `not exercised` — the touchpoint was declared but not exercised by the executed work.
+   **§5a Touchpoint validation.** For each declared touchpoint (architecture / testing strategy / engineering practices), record one of:
+   - `validated` — work conformed to the doctrine entry as currently stated.
+   - `deviated (touchpoint mismatch)` — work touched a doctrine area not declared in the task file.
+   - `incidental violation` — work conflicted with current doctrine without declaring the touchpoint.
+   - `not exercised` — touchpoint was declared but not exercised by the executed work.
    - `N/A — doctrine scaffold-only` — the relevant doctrine entry is still a scaffold.
 
-   **§5b Proposed doctrine deltas.** Any proposed updates to [`../../docs/09-architecture.md`](../../docs/09-architecture.md), [`../../docs/10-testing-strategy.md`](../../docs/10-testing-strategy.md), or [`../../docs/11-engineering-practices.md`](../../docs/11-engineering-practices.md) surfaced by this work — new topics to add, existing topic status changes (`pending → established`, `established → superseded`), or wording refinements. Each proposal carries: target doctrine doc, topic, proposed change, rationale. Proposals are non-blocking by default; product-owner approval applies the delta in a follow-up `docs:` commit per [`../../docs/09-architecture.md` §4](../../docs/09-architecture.md). If a proposal is marked `gating` (a corrective change must land before closure is meaningful), resolve before sign-off.
+   **§5b Proposed doctrine deltas.** Any proposed updates to [`../../docs/09-architecture.md`](../../docs/09-architecture.md), [`../../docs/10-testing-strategy.md`](../../docs/10-testing-strategy.md), or [`../../docs/11-engineering-practices.md`](../../docs/11-engineering-practices.md) surfaced by this work — new topics, topic status changes (`pending → established`, etc.), wording refinements. Each proposal carries: target doctrine doc, topic, proposed change, rationale, `gating` flag (default non-blocking; mark `gating` only if a corrective change must land before closure is meaningful). Approved deltas are applied in a follow-up `docs:` commit per [`../../docs/09-architecture.md` §4](../../docs/09-architecture.md) — not in the closing PR unless explicitly gating.
 
 6. **Working-rule frictions** — places where existing rules ([`../../docs/01-working-rules.md`](../../docs/01-working-rules.md), [`../../docs/02-git-workflow.md`](../../docs/02-git-workflow.md), [`../../docs/03-planning-model.md`](../../docs/03-planning-model.md), or ADRs) created friction during execution. Empty section is fine; do not omit the heading.
 

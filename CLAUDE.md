@@ -19,7 +19,7 @@ Sessions are either **development-oriented** (default) or **design-oriented** (w
 
 ## Implementation status
 
-> Replace this section with a short status table or paragraph as work progresses. Until the first milestone closes, this section can simply state "No work packages closed yet."
+> No work packages closed yet.
 
 ---
 
@@ -88,7 +88,7 @@ At-a-glance cross-references to the project's authoritative rule sources: [`docs
 
 ### Workflow discipline
 - **Git, branches, commits, merges, tags, releases, changelog:** see [`docs/02-git-workflow.md`](docs/02-git-workflow.md). GitHub Flow + version tags; merge-commit default with squash by exception; Conventional Commits; logical-unit commits (no commit-per-task); SemVer + annotated tags; Keep-a-Changelog format.
-- **Git operation ownership:** governed by [`docs/02-git-workflow.md` §1.1](docs/02-git-workflow.md). Claude drafts Git output (branch names, Conventional Commit subject + body, PR title + body, staging set); whether Claude also executes Git writes depends on the project's configured operation-ownership track. Read-only Git/GitHub inspection is always allowed.
+- **Git operation ownership:** governed by [`docs/02-git-workflow.md` §1.1](docs/02-git-workflow.md). Track for this project: `approval-gated`. Claude drafts Git output (branch names, Conventional Commit subject + body, PR title + body, staging set) and executes routine Git writes end-to-end after the user approves a named bounded operation. Read-only Git/GitHub inspection is always allowed.
 - **No AI attribution in GitHub-facing output.** Commit messages, PR titles/bodies, tag annotations, Release notes, CHANGELOG entries, and GitHub comments must not carry `Co-authored-by`, `Generated with`, or any equivalent AI-attribution line — unless the user explicitly requests it for that specific output. Internal documentation may acknowledge AI-assisted workflow; GitHub-facing output may not. See [`docs/02-git-workflow.md` §1.2](docs/02-git-workflow.md).
 - **Milestones, work packages, task-file structure:** see [`docs/03-planning-model.md`](docs/03-planning-model.md). Milestones use `NN-<slug>/` (default start `01-`; `00-` reserved for explicit bootstrap phases). Work packages restart at `01-` per milestone. Tasks use `T0..TN`. **Versions and milestones are decoupled** (a tag marks but does not cause milestone closure).
 - **Templates:** [`context/tasks/README.md`](context/tasks/README.md) (task files); [`context/sanity-checks/README.md`](context/sanity-checks/README.md) (readiness reports).
