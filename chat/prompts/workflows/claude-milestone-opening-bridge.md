@@ -49,7 +49,14 @@ You do NOT have direct access to the repository. Everything you know about the r
    - If the field is missing or `unknown`: include this instruction in the generated prompt — *"Before drafting, please check the current state of `docs/08-scope.md` (or its renamed-per-phase variant `docs/08-<phase>-scope.md`). If still in template-scaffold state, surface this in your report so the user can decide whether to author it separately or as a candidate WP under this milestone."*
    - You (ChatGPT) do NOT inspect repo files; either the orientation report carries the status, or Claude performs the check in the generated prompt.
 
-5. **Generate the milestone-opening prompt for Claude** following the sub-route logic below.
+5. **Surface doctrine-baseline status (informational, not blocking) using a two-track approach:**
+   - Read the orientation report's `Doctrine baseline:` field.
+   - If `placeholder` or `partial`: include this note in the bridge's output AND in the generated prompt's preamble — *"Doctrine baseline at `docs/09-architecture.md` / `docs/10-testing-strategy.md` / `docs/11-engineering-practices.md` is `<placeholder | partial>`. Concrete doctrine touchpoints are not expected at milestone opening; the per-WP planning conversation declares them and the freeze gate enforces population. The bridge is not blocking on doctrine here."*
+   - If `established`: include this note in the bridge's output AND in the generated prompt's preamble — *"Doctrine baseline is `established`. When drafting `Roadmap shape` and candidate work-package names, cross-check against the relevant `established` topics in `docs/09-architecture.md`, `docs/10-testing-strategy.md`, and `docs/11-engineering-practices.md`; flag any potential tension in the work-packages table or in your report (no resolution required at this step — the per-WP planning conversation handles it)."*
+   - If the field is missing or `unknown`: include this instruction in the generated prompt — *"Before drafting, please check the current state of `docs/09-architecture.md`, `docs/10-testing-strategy.md`, and `docs/11-engineering-practices.md` (per the doctrine-baseline classification in `chat/prompts/workflows/claude-onboarding.md`). Surface the baseline classification in your report. The bridge is not blocking on doctrine; the per-WP planning conversation enforces touchpoint declaration at freeze."*
+   - You (ChatGPT) do NOT inspect repo files; either the orientation report carries the status, or Claude performs the check in the generated prompt.
+
+6. **Generate the milestone-opening prompt for Claude** following the sub-route logic below.
 
 ## Requirements for the generated prompt
 
@@ -94,6 +101,7 @@ The prompt MUST:
 - be development-mode only (no design-mode work)
 - forbid implementation, runtime code, dependencies, infrastructure
 - include the scope-baseline note from step 4 of "What to do" above, when applicable
+- include the doctrine-baseline note from step 5 of "What to do" above, when applicable
 - defer Git operation ownership to `docs/02-git-workflow.md` §1.1; defer AI-attribution policy to `docs/02-git-workflow.md` §1.2
 - require Claude's chat output to be a brief summary plus the path(s) of files created or updated — no full file content pasted inline
 

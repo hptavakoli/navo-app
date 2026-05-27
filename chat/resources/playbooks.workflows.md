@@ -10,7 +10,36 @@ The goal:
 
 ---
 
-## 1. Planning Workflow
+## 1. Research / Discovery Workflow
+
+### Purpose
+To gather evidence and shape direction (research notes, synthesis docs, foundation-direction proposals) **before** formal planning. Research is **optional** — not every work package needs it. When used, research must remain consistent with the project's doctrine layer; it does not get to silently override it.
+
+### Steps
+
+1. Inspect doctrine before drafting synthesis or conclusions
+   - When research topics touch architecture, testing posture, or engineering practices, scan `docs/09-architecture.md`, `docs/10-testing-strategy.md`, and/or `docs/11-engineering-practices.md` for `established` topics in the research area
+   - Surface any tension between the proposed direction and current `established` doctrine explicitly in the synthesis or report — do not paper over it
+
+2. Route proposed doctrine deltas as proposals (not silent edits)
+   - If the research recommends updating, retiring, or adding a doctrine topic, flag it as a *proposed doctrine delta* directly in the synthesis or report
+   - Route the proposal through the next planning conversation or, if surfaced during execution, through readiness-report §5b at work-package close — never apply the delta silently from a research document
+   - The canonical doctrine-evolution rules in `docs/09-architecture.md` §4 govern; research does not bypass them
+
+3. Keep research outputs descriptive, not binding
+   - Research notes and synthesis docs are inputs to planning, not authority by themselves
+   - Promotion into ADRs, scope baselines, doctrine, or work-package task files happens only through the normal workflows (Planning, WP Close)
+
+### Guardrails
+
+- Research is OPTIONAL; do not invent a research stage where the user has not asked for one
+- Research does NOT replace planning — a frozen task file with declared `Doctrine touchpoints` is still required before implementation
+- Research does NOT bypass the doctrine evolution rules in `docs/09-architecture.md` §4
+- Keep research lightweight; do not turn it into a parallel workflow track or a freeze gate
+
+---
+
+## 2. Planning Workflow
 
 ### Purpose
 To transform a work package into a **fully specified, executable plan** before any implementation begins.
@@ -45,7 +74,7 @@ To transform a work package into a **fully specified, executable plan** before a
 
 ---
 
-## 2. Implementation Workflow
+## 3. Implementation Workflow
 
 ### Purpose
 To execute a work package **without discovery**, only following the frozen plan.
@@ -69,7 +98,7 @@ To execute a work package **without discovery**, only following the frozen plan.
    - Test results
    - Any deviations
    - Per-touchpoint outcomes (validated / deviated touchpoint mismatch / incidental violation / not exercised / N/A — doctrine scaffold-only)
-   - For full WP completion, follow §5 (Work Package Close) and use `chat/prompts/execution/work-package-close.md`
+   - For full WP completion, follow §6 (Work Package Close) and use `chat/prompts/execution/work-package-close.md`
    - For partial completion (a clean subset of tasks done; WP remains active), close the session cleanly with `chat/prompts/execution/implementation-session-close.md` — verifies acceptance for each closed task, records a durable resume pointer in the task file Notes, updates `CLAUDE.md` next-step, and prepares a logical-unit commit (per `docs/02-git-workflow.md` §5 — no WIP / per-task commits). Resume from the next unfinished task in a fresh Claude session.
 
 5. Git operation ownership: follow `docs/02-git-workflow.md` §1.1
@@ -78,7 +107,7 @@ To execute a work package **without discovery**, only following the frozen plan.
 
 ---
 
-## 3. Audit Workflow
+## 4. Audit Workflow
 
 ### Purpose
 To validate that implementation strictly matches planning and constraints.
@@ -106,7 +135,7 @@ To validate that implementation strictly matches planning and constraints.
 
 ---
 
-## 4. Refinement Workflow
+## 5. Refinement Workflow
 
 ### Purpose
 To handle **minor corrections** without reopening planning.
@@ -127,7 +156,7 @@ To handle **minor corrections** without reopening planning.
 
 ---
 
-## 5. Work Package Close Workflow
+## 6. Work Package Close Workflow
 
 ### Purpose
 To finalize a work package and prepare for the next one.
@@ -161,7 +190,7 @@ To finalize a work package and prepare for the next one.
 
 ---
 
-## 6. Next Work Package Workflow
+## 7. Next Work Package Workflow
 
 ### Purpose
 To safely transition into the next work package.
@@ -180,7 +209,7 @@ To safely transition into the next work package.
 
 ---
 
-## 7. Design Workflow
+## 8. Design Workflow
 
 Note:
 - Design workflow is supported but optional.
