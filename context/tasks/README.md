@@ -45,6 +45,14 @@ The matching readiness report goes at `context/sanity-checks/<NN>-<milestone-slu
 
 (a)–(z) lettered, observable, testable. Each criterion is a closure precondition; criteria do not need to map 1:1 to tasks.
 
+## Doctrine touchpoints
+
+Required — a missing or empty section blocks freeze. For each domain, list the specific doctrine topics this work package touches (by topic name from the relevant doctrine doc), or use `None applicable` if the WP genuinely has no touchpoint in that domain, or `N/A — doctrine scaffold-only` while doctrine docs are still pure scaffolds.
+
+- **Architecture** (per [`../../docs/09-architecture.md`](../../docs/09-architecture.md)): _e.g., "Thin-client posture over `navo-backend` APIs", or `None applicable`, or `N/A — doctrine scaffold-only`._
+- **Testing strategy** (per [`../../docs/10-testing-strategy.md`](../../docs/10-testing-strategy.md)): _e.g., "Provider/adapter mock seam discipline", or `None applicable`, or `N/A — doctrine scaffold-only`._
+- **Engineering practices** (per [`../../docs/11-engineering-practices.md`](../../docs/11-engineering-practices.md)): _e.g., "Frozen task file required before implementation begins", or `None applicable`, or `N/A — doctrine scaffold-only`._
+
 ## Task list  *(optional — use only if granular tasks help)*
 
 - T1, T2, ... if explicit task structure aids execution; or omit if scope + acceptance suffices.
@@ -70,11 +78,11 @@ The matching readiness report goes at `context/sanity-checks/<NN>-<milestone-slu
 
 1. Confirm with the user that we are entering planning mode for a specific work package.
 2. Re-read the relevant scope baseline (e.g., `docs/<NN>-scope.md`) and [`../../docs/01-working-rules.md`](../../docs/01-working-rules.md).
-3. If a placeholder or partial outline already exists at the target path (see File naming above), read it first and treat it as the starting point; flag any conflict between its content and the planning direction, then pause for user confirmation before drafting further. Draft (or update in place) the task file with `Status: planned`, `Frozen:` left blank, and any `Tx` tasks set to `pending`.
+3. If a placeholder or partial outline already exists at the target path (see File naming above), read it first and treat it as the starting point; flag any conflict between its content and the planning direction, then pause for user confirmation before drafting further. Draft (or update in place) the task file with `Status: planned`, `Frozen:` left blank, any `Tx` tasks set to `pending`, and the **Doctrine touchpoints** section populated for each of the three domains (architecture, testing strategy, engineering practices) — concrete topic names where applicable, `None applicable` where the WP genuinely has no touchpoint, or `N/A — doctrine scaffold-only` while doctrine docs are still scaffolds.
 4. Resolve open questions in chat before implementation begins.
 5. Update the task file if open-question resolutions change scope.
 6. The user reviews and approves.
-7. At freeze: add the `Frozen:` date. Implementation may begin only after freeze.
+7. At freeze: confirm all required sections — including **Doctrine touchpoints** — are filled per the template; missing or empty `Doctrine touchpoints` blocks freeze. Add the `Frozen:` date. Implementation may begin only after freeze.
 8. If the planning session should end here and implementation should happen in a fresh Claude session, use [`../../chat/prompts/execution/planning-session-close.md`](../../chat/prompts/execution/planning-session-close.md) to verify the frozen task file, update the milestone README row and the `CLAUDE.md` next-step, and prepare the commit. Mid-draft pauses (no `Frozen:` yet) do NOT need a special prompt — the next session resumes in `wp-drafting`.
 
 ### Executing a work package
