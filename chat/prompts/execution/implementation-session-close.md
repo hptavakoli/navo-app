@@ -39,13 +39,14 @@ If any `done` mark cannot be backed by acceptance evidence, REVERT it to `in pro
 
 ### 3. Durable resume pointer in the task file
 
-Append (or update) a one-line resume pointer in the task file's `Notes` section:
+Append (or update) a one-line resume pointer in the task file's `Notes` section, plus a brief active-doctrine-touchpoints record:
 
 ```
 Resume from `Tx` (next session) — completed through `T<prev>` on YYYY-MM-DD.
+Active doctrine touchpoints: architecture: <topic | None applicable | N/A — doctrine scaffold-only>; testing strategy: <topic | None applicable | N/A — doctrine scaffold-only>; engineering practices: <topic | None applicable | N/A — doctrine scaffold-only>.
 ```
 
-If the task file has no `Notes` section, add one. Keep the pointer terse. This is the durable signal that survives independently of `CLAUDE.md` drift.
+If the task file has no `Notes` section, add one. Keep the pointer terse. The Resume-from line is the durable signal that survives independently of `CLAUDE.md` drift; the Active-doctrine-touchpoints line lets the next session restate the doctrine context at execution-start per `chat/prompts/workflows/claude-implementation-bridge.md` Rule #6.
 
 ### 4. Dispatcher next-step update
 
@@ -94,10 +95,11 @@ Provide a concise report:
 1. **Tasks closed this session** — list with one-line acceptance evidence per task (file path, test, commit, or artifact).
 2. **Tasks reverted** (if any) — any `done` mark backed out due to missing acceptance evidence, with reason.
 3. **Resume pointer** — exact `Tx` the next session should pick up from; cite the Notes-section line.
-4. **Files updated** — list each file with a one-line description.
-5. **Files NOT modified** — paths inspected and intentionally left alone (auditable byte-stability claim).
-6. **Suggested commit draft** — Conventional Commits subject + body in a single fenced block per `docs/02-git-workflow.md` §4.1, plus the recommended staging set.
-7. **Cold-start invariant** — confirmed (with expected orientation fields) or flagged.
+4. **Doctrine-touchpoint outcomes (this session)** — per-domain outcome (architecture / testing strategy / engineering practices) for the work executed this session: one of `validated`, `deviated touchpoint mismatch`, `incidental violation`, `not exercised`, or `N/A — doctrine scaffold-only`. Carry-over: the `Notes` resume pointer's `Active doctrine touchpoints` line tells the next session what to restate at execution-start.
+5. **Files updated** — list each file with a one-line description.
+6. **Files NOT modified** — paths inspected and intentionally left alone (auditable byte-stability claim).
+7. **Suggested commit draft** — Conventional Commits subject + body in a single fenced block per `docs/02-git-workflow.md` §4.1, plus the recommended staging set.
+8. **Cold-start invariant** — confirmed (with expected orientation fields) or flagged.
 
 ## Goal
 

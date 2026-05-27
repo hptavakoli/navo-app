@@ -35,6 +35,7 @@ Verify the planning output is internally consistent, the milestone README reflec
 
 - Frontmatter: `Status: planned`, `Planned:` set, `Frozen:` set. Confirm.
 - Body sections present and non-empty: `Purpose`, `Scope` (with `In scope` / `Out of scope`), `Acceptance criteria`.
+- `Doctrine touchpoints` section populated for all three domains (architecture / testing strategy / engineering practices), with each domain carrying a concrete topic name from `docs/09-architecture.md`, `docs/10-testing-strategy.md`, or `docs/11-engineering-practices.md`, OR `None applicable`, OR `N/A — doctrine scaffold-only`. A missing or empty `Doctrine touchpoints` section blocks freeze — if any domain is absent or empty, do not consider this prompt's freeze-gate satisfied; report the block.
 - If a `Task list` (Tx) is present: all tasks are `pending`. None `in progress`, none `done`. The planning conversation freezes the plan; execution has not started.
 - Internal consistency: each acceptance criterion is observable; each `Tx` (if present) advances one or more acceptance criteria.
 
