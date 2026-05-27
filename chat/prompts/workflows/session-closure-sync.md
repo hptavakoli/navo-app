@@ -22,11 +22,13 @@ This is **not** a planning, implementation, or work-package-closure step. It is 
    - The active milestone README — work-package status table, roadmap shape, ADR pointers.
    - `chat/resources/app.project-state.md` — Current Status, Next Action, Progress Log (append-only), authoritative-documents pointer list.
    - `chat/resources/playbooks.workflows.md`, `communication.general.md`, `communication.claude.md` — only if a workflow rule or communication rule has changed.
+   - `chat/resources/doctrine.architecture.md`, `chat/resources/doctrine.testing-strategy.md`, `chat/resources/doctrine.engineering-practices.md` — only if project-side doctrine docs (`docs/09-architecture.md`, `docs/10-testing-strategy.md`, `docs/11-engineering-practices.md`) have shifted in a way that affects ChatGPT-side reasoning (see step 3 for the drift check).
    - `chat/README.md` — only if the live-repo authoritative-documents list has shifted.
    - `CHANGELOG.md` — append a curated `[Unreleased]` entry for the sync pass if it shipped meaningful workflow / documentation changes.
-3. Apply minimal, targeted edits. Preserve structure and prior content.
-4. Verify byte-stability of unrelated paths (no accidental edits to runtime code, frozen task files, frozen readiness reports, or unrelated docs).
-5. Surface a complete review proposal for the user.
+3. **Doctrine resource sync + doctrine drift check.** Compare `chat/resources/doctrine.architecture.md`, `chat/resources/doctrine.testing-strategy.md`, and `chat/resources/doctrine.engineering-practices.md` (ChatGPT-side reasoning rules) against the project-side doctrine docs `docs/09-architecture.md`, `docs/10-testing-strategy.md`, `docs/11-engineering-practices.md`. If a project-side doctrine has shifted in a way that affects how ChatGPT should reason (topic status changes, new topics that warrant ChatGPT-side guidance, evolution-rule wording changes), surface a proposed update to the corresponding `chat/resources/doctrine.*.md` resource. Doctrine drift surfaces here as a proposal for product-owner approval; do NOT silently rewrite the ChatGPT-side resources. The canonical doctrine-evolution rules in `docs/09-architecture.md` §4 govern.
+4. Apply minimal, targeted edits. Preserve structure and prior content.
+5. Verify byte-stability of unrelated paths (no accidental edits to runtime code, frozen task files, frozen readiness reports, or unrelated docs).
+6. Surface a complete review proposal for the user.
 
 ## Constraints (STRICT)
 

@@ -5,7 +5,7 @@
 - **What this is:** the prompt sent to ChatGPT at the start of a fresh project conversation to orient it on project state, communication rules, and system roles.
 - **When to use:** at the start of a new ChatGPT project session, before asking ChatGPT to reason, validate, or generate prompts for Claude.
 - **Target AI:** ChatGPT.
-- **Input:** the five `chat/resources/*.md` files uploaded as project resources in ChatGPT, plus latest `app.design-status.md` if the design track is active.
+- **Input:** the project's `chat/resources/*.md` files uploaded as ChatGPT project resources (communication / operational / engineering-doctrine / scope project-state, per `chat/README.md`), plus latest `app.design-status.md` if the design track is active.
 - **Output:** a brief confirmation of understanding (project purpose, milestone / WP status, design-track status if relevant, next action), in Farsi.
 
 --- COPY FROM BELOW ---
@@ -31,6 +31,9 @@ Start by reading:
 - `communication.claude.md` → how we communicate with Claude (executor), including design-mode boundaries
 - `playbooks.workflows.md` → how the system operates end-to-end, including the design workflow
 - `user-environment.md` → user-global / device-stable facts (always relevant for grounding the local environment)
+- `doctrine.architecture.md` → ChatGPT-side reasoning rules for the architecture doctrine layer; how to handle doctrine touchpoints, deviations, and proposed deltas, plus the binding-precedence rule (ADRs and working rules win over doctrine)
+- `doctrine.testing-strategy.md` → ChatGPT-side reasoning rules for the testing-strategy doctrine layer
+- `doctrine.engineering-practices.md` → ChatGPT-side reasoning rules for the engineering-practices doctrine layer; includes the Git-posture and no-AI-attribution rules
 - For design-oriented sessions, or whenever design-track status / current design next-action matters, also read latest `app.design-status.md` when available → current design-track status, audited / refreshed briefs, open Q-map, current next-action, deferred / future-horizon items, and do-not-reopen decisions
 
 Note:

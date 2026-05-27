@@ -61,13 +61,15 @@ The generated prompt MUST enforce:
 
 5. **Execution Behavior** — Execute ALL tasks for the work package in one continuous flow (do NOT stop between tasks). Follow the correct implementation order as defined in the task file (not necessarily the listed order). Implement in a logical and controlled sequence based on dependencies. Keep changes minimal and targeted.
 
-6. **Uncertainty Handling** — If something is unclear: do NOT guess. Explicitly flag it. Ask or report it.
+6. **Doctrine touchpoints** — At execution start, restate the work package's declared `Doctrine touchpoints` (architecture / testing strategy / engineering practices per `docs/09-architecture.md`, `docs/10-testing-strategy.md`, and `docs/11-engineering-practices.md`). Implementation MUST stay within the declared touchpoints. If implementation drifts to an undeclared doctrine area, or if the doctrine guidance for a declared touchpoint is ambiguous, pause and surface as a doctrine-touchpoint deviation (do not silently extend scope).
 
-7. **Failure Handling** — If blocked: stop execution. Report the blocker clearly.
+7. **Uncertainty Handling** — If something is unclear: do NOT guess. Explicitly flag it. Ask or report it.
 
-8. **Reporting Requirement (MANDATORY)** — Claude MUST return a structured report including: what was implemented; what is incomplete (if any); blockers or uncertainties; any important notes.
+8. **Failure Handling** — If blocked: stop execution. Report the blocker clearly.
 
-9. **Git Handling**:
+9. **Reporting Requirement (MANDATORY)** — Claude MUST return a structured report including: what was implemented; what is incomplete (if any); blockers or uncertainties; any important notes; per-touchpoint outcomes for each declared `Doctrine touchpoints` entry (`validated` / `deviated touchpoint mismatch` / `incidental violation` / `not exercised` / `N/A — doctrine scaffold-only`).
+
+10. **Git Handling**:
    - Operation ownership: follow `docs/02-git-workflow.md` §1.1 (whether Claude drafts only or also executes Git writes depends on the project's configured track).
    - Conventions: follow `docs/02-git-workflow.md` §2–§14 for branch naming, Conventional Commits, PR shape, merge strategy, tags, CHANGELOG, hotfix, spike, and milestone-branch policy.
    - DO NOT add AI attribution to any GitHub-facing text — commit messages, PR titles/bodies, tag annotations, Release notes, CHANGELOG entries, GitHub comments. See `docs/02-git-workflow.md` §1.2 (this rule is independent of operation ownership).

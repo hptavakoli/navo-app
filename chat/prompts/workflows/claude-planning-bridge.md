@@ -63,9 +63,10 @@ Keep it development-mode only:
 The prompt MUST:
 - start from planning only (no coding)
 - require the draft to be written as a file at the task-file path defined in `context/tasks/README.md` (no execution; the draft is an artifact on disk, not chat content)
-- require adherence to `context/tasks/README.md` structure
+- require adherence to `context/tasks/README.md` structure (including the required `Doctrine touchpoints` section)
 - require Claude to first check whether a placeholder or partial outline already exists at the target path. If yes: read it, treat it as the starting point, and flag any conflict between its content and the planning direction — pausing for user confirmation **before** drafting further
 - require `Status: planned` with `Frozen:` left blank, signalling a pre-freeze draft pending review
+- require the `Doctrine touchpoints` section populated for each of the three domains (architecture / testing strategy / engineering practices) — concrete topic names from `docs/09-architecture.md`, `docs/10-testing-strategy.md`, and `docs/11-engineering-practices.md` where applicable, `None applicable` where the WP genuinely has no touchpoint, or `N/A — doctrine scaffold-only` while doctrine docs are still scaffolds. Scale expectations to the orientation report's `Doctrine baseline` field: at `placeholder` or `partial`, `N/A — doctrine scaffold-only` is broadly acceptable; at `established`, concrete topic references are expected
 - require Claude's chat output to be a brief summary plus the file path — no task-file content pasted inline
 
 ## Output format (STRICT)

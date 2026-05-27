@@ -31,7 +31,7 @@ Flag anything ambiguous, inconsistent, or out of date.
 
 ## Required structured fields (orientation report — top of report)
 
-Your orientation report MUST begin with four discrete fields. Downstream bridges parse these to route correctly; fuzzy prose breaks the routing.
+Your orientation report MUST begin with five discrete fields. Downstream bridges parse these to route correctly; fuzzy prose breaks the routing.
 
 - `Project state:` exactly one of:
   - `milestone-pending` — no milestone is currently `open` (a `placeholder` milestone may exist, or the next milestone's folder may not exist yet)
@@ -49,6 +49,11 @@ Your orientation report MUST begin with four discrete fields. Downstream bridges
   - `roadmap-pending` — the milestone folder exists with the README's `Purpose` still in template-scaffold form, OR the `Work packages` table still contains template example rows. Status is `placeholder`.
   - `opening-ready` — the milestone README has real content (`Purpose` filled, `Roadmap shape` recorded, `Work packages` table populated with real candidates). Status is still `placeholder`.
   - `unknown` — sub-state cannot be determined.
+- `Doctrine baseline:` one of:
+  - `placeholder` — doctrine docs at `docs/09-architecture.md`, `docs/10-testing-strategy.md`, `docs/11-engineering-practices.md` exist but carry scaffold-only content (mostly status markers; no project-specific doctrine authored yet).
+  - `partial` — some doctrine topics carry project-specific content; others remain scaffold-only.
+  - `established` — doctrine docs carry substantial project-specific content reflecting current architecture / testing / engineering practices.
+  - `unknown` — doctrine baseline cannot be determined from the repo.
 
 Optional (include only if you naturally surfaced it during orientation; otherwise omit and let the consuming bridge ask Claude to verify):
 - `Scope baseline:` one of `scaffold` (current `docs/08-scope.md` or `docs/08-<phase>-scope.md` still in template form), `authored` (real content), or `unknown`.
