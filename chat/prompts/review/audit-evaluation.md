@@ -41,7 +41,11 @@ You MUST:
 2. **Validate findings** — which audit points are valid (evidence-based); which are likely false positives.
 3. **Detect gaps** — missing implementation vs acceptance criteria; missing edge cases.
 4. **Identify risks** — real forward-looking risks (not redesign suggestions).
-5. **Evaluate Git-ownership and AI-attribution findings** — validate any audit findings about AI-tooling Git operations that conflict with `docs/02-git-workflow.md` §1.1 (operation ownership) — what counts as a violation depends on the project's configured track — and any AI-attribution lines in GitHub-facing text (commit messages, PR titles/bodies, tag annotations, Release notes, CHANGELOG entries, GitHub comments) per `docs/02-git-workflow.md` §1.2. Treat substantiated findings as confirmed issues, NOT as redesign suggestions.
+5. **Route doctrine findings** — for each audit finding classified as `doctrine-touchpoint-deviation` or `doctrine-violation (incidental)`:
+   - Distinguish: did the work touch an undeclared doctrine area (touchpoint mismatch) or conflict with current doctrine without declaring (incidental violation)?
+   - For confirmed findings that suggest a doctrine update (a new topic to add, an existing topic to refine, a status change), route the suggestion to readiness report §5b "Proposed doctrine deltas" — to be reviewed at work-package-close per `chat/prompts/execution/work-package-close.md` §5b. Mark `gating` only if a corrective change must land before closure is meaningful.
+   - For findings that are NOT doctrine updates (the work was the issue, not the doctrine), classify them under the audit-finding type and route as a normal correction.
+6. **Evaluate Git-ownership and AI-attribution findings** — validate any audit findings about AI-tooling Git operations that conflict with `docs/02-git-workflow.md` §1.1 (operation ownership) — what counts as a violation depends on the project's configured track — and any AI-attribution lines in GitHub-facing text (commit messages, PR titles/bodies, tag annotations, Release notes, CHANGELOG entries, GitHub comments) per `docs/02-git-workflow.md` §1.2. Treat substantiated findings as confirmed issues, NOT as redesign suggestions.
 
 ## Rules (STRICT)
 
@@ -67,6 +71,7 @@ For each issue:
 - Why it matters (simple Farsi explanation)
 - Which side is more likely correct (if clear)
 - If NOT clear → mark as "needs further investigation"
+- For doctrine findings: distinguish `doctrine-touchpoint-deviation` (declared touchpoint mismatch — the WP claimed a touchpoint and the work landed elsewhere) from `doctrine-violation (incidental)` (the work touched a doctrine area that was NOT declared as a touchpoint). The routing differs: the former usually means the task-file declaration needs to match reality; the latter usually means either the work needs adjustment or the doctrine entry needs a proposed delta (route to readiness §5b at WP-close).
 
 ### 2) Risks / Edge Cases
 - List real risks (non-blocking)
@@ -86,7 +91,7 @@ For each issue:
 - Suggest what to ask Claude
 
 ### 6) Overall Assessment
-- Work-package status: ready / needs fixes
+- Work-package status: ready / ready with proposed doctrine deltas (non-blocking — to be routed at WP-close §5b) / needs fixes
 - Confidence: low / medium / high
 - Short reasoning in simple Farsi
 

@@ -22,6 +22,7 @@ Follow `communication.general.md` and `communication.claude.md`.
 - Merge ALL relevant points from the conversation (no omissions)
 - Remove redundancy and noise
 - Keep it concise and high-signal
+- For doctrine findings (`doctrine-touchpoint-deviation` or `doctrine-violation (incidental)`): phrase as observations about the declared touchpoints versus the actual diff (touchpoint mismatch), or as observations about doctrine areas the work touched without declaring (incidental violation). Surface any audit-evaluation-flagged proposed doctrine deltas as questions for Claude to confirm — e.g., "We noticed the work touched X, which isn't in the declared touchpoints — should the task-file declaration be updated, or does this suggest a doctrine refinement at `docs/09-11.md`?" Doctrine deltas land via `chat/prompts/execution/work-package-close.md` §5b at closure, not via this response message.
 
 ## Data inputs
 
