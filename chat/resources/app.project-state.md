@@ -119,6 +119,9 @@ Single shared Navo ChatGPT Project carries the following resources. From this re
   - `communication.general.md`
   - `playbooks.workflows.md`
   - `user-environment.md`
+  - `doctrine.architecture.md`
+  - `doctrine.testing-strategy.md`
+  - `doctrine.engineering-practices.md`
 - Per-repo scoped project-state (one upload each):
   - `backend.project-state.md` (from `navo-backend/chat/resources/`)
   - `app.project-state.md` (this file, from `navo-app/chat/resources/`)
@@ -128,7 +131,9 @@ Single shared Navo ChatGPT Project carries the following resources. From this re
 - Deferred until each design track activates (per-repo, one upload each — upload only when the corresponding `<scope>.design-status.md` is present in the repo):
   - `backend.design-status.md`, `app.design-status.md`, `website.design-status.md`, `content.design-status.md`, `directory.design-status.md`
 
-Total uploads at current state: 9 files. After all design tracks activate: 14 files.
+Total uploads at current state: 12 files (7 shared + 5 per-repo project-state). After all design tracks activate: 17 files.
+
+Per-active-scope onboarding view (for any one Navo repo): 8 stable resources — 4 communication / operational (`communication.*`, `playbooks.workflows.md`, `user-environment.md`) + 3 engineering doctrine (`doctrine.*`) + 1 scope project-state (`<scope>.project-state.md`) — plus 1 conditional `<scope>.design-status.md` when the design track is active in that repo.
 
 ---
 

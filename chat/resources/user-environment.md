@@ -118,12 +118,7 @@ These are conventions to assume across the file owner's projects unless a specif
 
 - `[default — user-personal]` **Claude Code CLI** is the file owner's primary AI development partner.
 - `[default — user-personal]` VS Code AI integrations available: Claude Code, Codeium, GitHub Copilot Pull Request integration. Copilot may also be referenced as the auditor in some prompts.
-- `[default — user-personal]` ChatGPT project resource set includes the following five files (uploaded into the ChatGPT project being used for active development):
-  - `<scope>.project-state.md`
-  - `communication.general.md`
-  - `communication.claude.md`
-  - `playbooks.workflows.md`
-  - `user-environment.md` (this file)
+- `[default — user-personal]` ChatGPT project resource set includes the project's shared communication / operational / engineering-doctrine resources plus a per-scope project-state file (and optionally a per-scope design-status file when the design track is active). Exact resource inventory and counts are project-specific and recorded in each project's `chat/README.md` and `<scope>.project-state.md`; do not assume a fixed count or list here.
 
 ---
 

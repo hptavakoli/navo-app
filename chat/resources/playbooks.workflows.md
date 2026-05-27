@@ -24,12 +24,14 @@ To transform a work package into a **fully specified, executable plan** before a
    - Ask for full task breakdown (T1…TN) — or scope + acceptance only for smaller WPs
    - Require: Description / Boundary / Acceptance / Notes (or scope + acceptance + optional notes)
    - Deliverable is a task file at the canonical path defined in `context/tasks/README.md` — not chat output. If a placeholder or partial outline exists at the target path, Claude must read it first and flag any conflict with the planning direction before drafting further
+   - Require: Doctrine touchpoints section filled per the task-file template (architecture / testing strategy / engineering practices); `None applicable` and `N/A — doctrine scaffold-only` are valid per domain where genuinely empty
 
 3. Review output (ChatGPT)
    - Validate:
      - scope alignment
      - constraint adherence
      - missing decisions
+     - doctrine touchpoints declared per domain (architecture / testing strategy / engineering practices)
 
 4. Resolve open questions
    - Only **micro-decisions**
@@ -55,6 +57,7 @@ To execute a work package **without discovery**, only following the frozen plan.
    - Execute the FULL work package (not task-by-task unless explicitly requested)
    - Follow task order + dependency graph strictly
    - Maintain a clean baseline (tests passing at each logical checkpoint)
+   - Restate the WP's declared Doctrine touchpoints at execution start; if implementation drifts to an undeclared touchpoint, pause and surface as a doctrine-touchpoint deviation
 
 3. No mid-work-package changes
    - No scope expansion
@@ -65,6 +68,7 @@ To execute a work package **without discovery**, only following the frozen plan.
    - What was implemented
    - Test results
    - Any deviations
+   - Per-touchpoint outcomes (validated / deviated touchpoint mismatch / incidental violation / not exercised / N/A — doctrine scaffold-only)
    - For full WP completion, follow §5 (Work Package Close) and use `chat/prompts/execution/work-package-close.md`
    - For partial completion (a clean subset of tasks done; WP remains active), close the session cleanly with `chat/prompts/execution/implementation-session-close.md` — verifies acceptance for each closed task, records a durable resume pointer in the task file Notes, updates `CLAUDE.md` next-step, and prepares a logical-unit commit (per `docs/02-git-workflow.md` §5 — no WIP / per-task commits). Resume from the next unfinished task in a fresh Claude session.
 
@@ -85,11 +89,14 @@ To validate that implementation strictly matches planning and constraints.
 2. Compare:
    - Acceptance criteria vs implementation
    - Constraints vs actual behavior
+   - Declared Doctrine touchpoints vs actual diff (declared-first validation; then check for incidental violations against undeclared doctrine areas)
 
 3. Identify:
    - gaps
    - risks
    - violations
+   - doctrine-touchpoint deviations (declared touchpoint mismatch)
+   - incidental doctrine violations (work touched undeclared doctrine area)
 
 4. Fix only:
    - objective gaps (acceptance, correctness, constraints)
@@ -133,6 +140,7 @@ To finalize a work package and prepare for the next one.
 
 2. Update (Claude, project-side):
    - The work-package task file (closure metadata), the matching readiness report, and the milestone README's work-packages table
+   - Readiness report §5 Doctrine validation — §5a Touchpoint validation outcomes; §5b Proposed doctrine deltas (non-blocking by default; `gating` flag for corrective changes that must land before closure)
    - The `CLAUDE.md` dispatcher next-step pointer, when reality has moved
    - `CHANGELOG.md` only when a version-tag boundary applies under the Git workflow
    - The closure-metadata pattern (closing PR with placeholders, then sign-off patch PR) is documented in `docs/03-planning-model.md`; details belong there, not here
@@ -143,9 +151,11 @@ To finalize a work package and prepare for the next one.
 4. Ensure:
    - cold-start readiness (no chat dependency)
    - consistency across all discovery paths
+   - any proposed doctrine deltas routed via readiness §5b are surfaced for product-owner decision; `gating` deltas resolve before sign-off
 
 5. Return a concise work-package-close report for review (no assumptions of completion)
    - Files updated, summary of changes, outstanding issues
+   - Doctrine validation summary — per-touchpoint outcomes from readiness §5a; proposed doctrine deltas from §5b (each: target doctrine doc, topic, proposed change, rationale, `gating` flag)
    - Closing PR draft (title in Conventional Commits format + body + recommended staging set if not obvious) — when operating under the per-WP-PR default; under the conditional milestone-branch policy at `docs/02-git-workflow.md §14`, replace with a closing-commit subject + body on the milestone branch (per-WP work does not get its own PR; only the milestone-close PR merges back to `main`)
    - Sign-off patch follow-up note (whether one is needed and what placeholders the closing PR's readiness report should carry) — under the milestone-branch policy, the placeholders are filled by a follow-up commit on the milestone branch
 
@@ -162,7 +172,7 @@ To safely transition into the next work package.
 
 2. Onboard each AI:
    - Claude (project-side cold-start anchors): `CLAUDE.md` (dispatcher) → active milestone README → relevant readiness report
-   - ChatGPT (resource-side onboarding): `<scope>.project-state.md`, `communication.general.md`, `communication.claude.md`, `playbooks.workflows.md` (this file)
+   - ChatGPT (resource-side onboarding): `<scope>.project-state.md`, `communication.general.md`, `communication.claude.md`, `playbooks.workflows.md` (this file), `doctrine.architecture.md`, `doctrine.testing-strategy.md`, `doctrine.engineering-practices.md`
 
 3. Confirm understanding before any planning or execution
 

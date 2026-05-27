@@ -27,7 +27,7 @@ If anything in `chat/` (especially `chat/resources/app.project-state.md`) confli
 ```
 chat/
 ├── README.md                       (this file)
-├── resources/                       ← uploaded to ChatGPT manually (5 files)
+├── resources/                       ← uploaded to ChatGPT manually (8 stable per active scope + 1 conditional design-status)
 └── prompts/
     ├── bootstrap/                   ← one-time, for new projects from the template (removed at bootstrap closeout)
     ├── migration/                   ← one-time, for existing projects adopting the template (removed at migration closeout)
@@ -38,19 +38,30 @@ chat/
 
 ### `resources/` — uploaded to ChatGPT
 
-Five files manually uploaded into ChatGPT's project resource folder. ChatGPT auto-loads them at every onboarding.
+Manually uploaded into ChatGPT's project resource folder. ChatGPT auto-loads them at every onboarding. The per-active-scope set is **8 stable resources** — 4 communication / operational + 3 engineering-doctrine + 1 scope project-state — plus **1 conditional** design-status resource when the design track is active. The Navo-wide workspace-aggregate inventory (across all five product repos) is recorded in [`resources/app.project-state.md`](resources/app.project-state.md) under "ChatGPT Project Upload Set".
 
-- `app.project-state.md` — general project-state snapshot (Current Status, Next Action, Operational Constraints, Key Decisions, Progress Log)
+**Communication / operational (shared across all Navo repos):**
+
 - `communication.general.md` — communication philosophy, language rules, prompt-generation discipline
 - `communication.claude.md` — Claude-specific behavior expectations
 - `playbooks.workflows.md` — operational workflows (Planning, Implementation, Audit, Refinement, Work Package Close, Next Work Package, Design)
 - `user-environment.md` — user-global / device-stable facts (OS, editor, package managers, language runtimes); **maintained from a canonical copy and synced across the user's projects**
 
+**Engineering doctrine (shared across all Navo repos):**
+
+- `doctrine.architecture.md` — ChatGPT-side reasoning rules for the architecture doctrine layer; counterpart to project-side [`../docs/09-architecture.md`](../docs/09-architecture.md).
+- `doctrine.testing-strategy.md` — ChatGPT-side reasoning rules for the testing-strategy doctrine layer; counterpart to [`../docs/10-testing-strategy.md`](../docs/10-testing-strategy.md).
+- `doctrine.engineering-practices.md` — ChatGPT-side reasoning rules for the engineering-practices doctrine layer; counterpart to [`../docs/11-engineering-practices.md`](../docs/11-engineering-practices.md).
+
+**Scope project-state (this repo only):**
+
+- `app.project-state.md` — general project-state snapshot for `navo-app` (Current Status, Next Action, Operational Constraints, Key Decisions, ChatGPT Project Upload Set, Progress Log). The other four Navo repos each carry their own `<scope>.project-state.md` with the same structure.
+
 The dot-prefix in filenames (e.g., `communication.claude.md`, not `communication-claude.md`) is intentional: ChatGPT shows resources as flat files without folder hierarchy, and the dot-naming preserves grouping in the ChatGPT-side UI.
 
-**Maintenance loop:** edit here (source of truth) → upload or replace in ChatGPT's resource folder. Use `chat/prompts/workflows/claude-project-state-update.md` to ask Claude Code to apply incremental updates to `app.project-state.md`. `user-environment.md` is updated at the user's canonical copy and synced across all the user's projects — do not edit it from inside a single project's session unless the user explicitly asks.
+**Maintenance loop:** edit here (source of truth) → upload or replace in ChatGPT's resource folder. Use `chat/prompts/workflows/claude-project-state-update.md` to ask Claude Code to apply incremental updates to `app.project-state.md`. `user-environment.md` is updated at the user's canonical copy and synced across all the user's projects — do not edit it from inside a single project's session unless the user explicitly asks. Doctrine resources track the project-side doctrine docs in `docs/09-11.md`; update them when the doctrine docs change in a way that affects ChatGPT-side reasoning.
 
-When the design track is active, the user may also upload latest `app.design-status.md` from `context/design/` as a sixth resource — replaced (not edited) after each design-workflow update.
+When the design track is active, the user may also upload `context/design/app.design-status.md` as a conditional resource — replaced (not edited) after each design-workflow update.
 
 ### `prompts/` — session prompt templates
 
