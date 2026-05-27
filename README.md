@@ -36,6 +36,7 @@ The repo is documentation-first and currently carries no runtime code. Implement
 - [`docs/`](docs/) — authoritative project documentation:
   - [`docs/01-working-rules.md`](docs/01-working-rules.md), [`docs/02-git-workflow.md`](docs/02-git-workflow.md), [`docs/03-planning-model.md`](docs/03-planning-model.md), [`docs/04-runbook.md`](docs/04-runbook.md) — operational discipline.
   - [`docs/05-product-context.md`](docs/05-product-context.md), [`docs/06-feature-blueprint.md`](docs/06-feature-blueprint.md), [`docs/07-technical-direction.md`](docs/07-technical-direction.md), [`docs/08-scope.md`](docs/08-scope.md) — project shape.
+  - [`docs/09-architecture.md`](docs/09-architecture.md), [`docs/10-testing-strategy.md`](docs/10-testing-strategy.md), [`docs/11-engineering-practices.md`](docs/11-engineering-practices.md) — engineering doctrine (living): architecture, testing strategy, engineering practices indexes that evolve with the project.
   - [`docs/decisions/`](docs/decisions/) — Architecture Decision Records (ADRs).
   - [`docs/research/`](docs/research/) — research and synthesis (when used).
 - [`context/tasks/`](context/tasks/) — milestones and work packages.

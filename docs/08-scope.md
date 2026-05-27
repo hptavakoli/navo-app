@@ -1,6 +1,6 @@
 # Navo App — Scope
 
-**Status:** Draft. This file is **renamed per phase** when scope is frozen — for example `08-poc-scope.md` for a Proof-of-Concept phase, `08-mvp-scope.md` for an MVP, etc. The number `08` is reserved for the active scope baseline; later phases extend with `09-...md`, `10-...md` if needed.
+**Status:** Draft. This file is **renamed per phase** when scope is frozen — for example `08-poc-scope.md` for a Proof-of-Concept phase, `08-mvp-scope.md` for an MVP, etc. The number `08` is reserved for the active scope baseline; later phases extend with `12-...md`, `13-...md` if needed. (`09`–`11` are reserved for the engineering-doctrine layer: [`09-architecture.md`](09-architecture.md), [`10-testing-strategy.md`](10-testing-strategy.md), [`11-engineering-practices.md`](11-engineering-practices.md).)
 
 > Frozen scope baseline for the active phase. Distinct from the broader [`05-product-context.md`](05-product-context.md): this document records the **specific subset** of capability that the current phase commits to. It is authoritative and supersedes general direction docs for matters explicitly listed below.
 
@@ -52,7 +52,7 @@
 
 ## Where this document fits
 
-The scope baseline is **authoritative for the phase it covers**. ADRs may refine or constrain it; working rules apply throughout; milestones and work packages execute against it. When the phase closes, this document is preserved as the historical baseline; the next phase authors a sibling document (`09-<phase>-scope.md`) rather than mutating this one.
+The scope baseline is **authoritative for the phase it covers**. ADRs may refine or constrain it; working rules apply throughout; milestones and work packages execute against it. When the phase closes, this document is preserved as the historical baseline; the next phase authors a sibling document (`12-<phase>-scope.md`) rather than mutating this one.
 
 ## When to fill this in
 

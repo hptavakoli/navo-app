@@ -38,8 +38,14 @@ In priority order for current concerns:
 
 5. [`docs/05-product-context.md`](docs/05-product-context.md) — who/what/why for the project.
 6. [`docs/06-feature-blueprint.md`](docs/06-feature-blueprint.md) — capability outline.
-7. [`docs/07-technical-direction.md`](docs/07-technical-direction.md) — stack and architecture direction.
+7. [`docs/07-technical-direction.md`](docs/07-technical-direction.md) — bootstrap-time stack and initial architecture direction. The living architecture counterpart is [`docs/09-architecture.md`](docs/09-architecture.md).
 8. [`docs/08-scope.md`](docs/08-scope.md) — frozen scope baseline for the active phase (renamed per phase, e.g., `08-poc-scope.md`).
+
+**Engineering doctrine (living):**
+
+9. [`docs/09-architecture.md`](docs/09-architecture.md) — architecture doctrine; living counterpart to `07-technical-direction.md`.
+10. [`docs/10-testing-strategy.md`](docs/10-testing-strategy.md) — testing-strategy doctrine.
+11. [`docs/11-engineering-practices.md`](docs/11-engineering-practices.md) — engineering-practices doctrine.
 
 **Decisions and research:**
 
@@ -121,7 +127,7 @@ The immediate next action is:
 
 For a fresh session orienting from cold:
 
-- Read [`docs/05-product-context.md`](docs/05-product-context.md) (when filled), [`docs/01-working-rules.md`](docs/01-working-rules.md), [`docs/02-git-workflow.md`](docs/02-git-workflow.md), [`docs/03-planning-model.md`](docs/03-planning-model.md). Read [`docs/04-runbook.md`](docs/04-runbook.md) for operational quick-reference.
+- Read [`docs/05-product-context.md`](docs/05-product-context.md) (when filled), [`docs/01-working-rules.md`](docs/01-working-rules.md), [`docs/02-git-workflow.md`](docs/02-git-workflow.md), [`docs/03-planning-model.md`](docs/03-planning-model.md). Read [`docs/04-runbook.md`](docs/04-runbook.md) for operational quick-reference. Read the engineering-doctrine docs ([`docs/09-architecture.md`](docs/09-architecture.md), [`docs/10-testing-strategy.md`](docs/10-testing-strategy.md), [`docs/11-engineering-practices.md`](docs/11-engineering-practices.md)) when the session involves architecture, testing posture, or engineering practices.
 - Read the active milestone README at `context/tasks/<NN>-<milestone-slug>/README.md` for status, dependencies, and parallelism.
 - Do not begin execution of any work package at `roadmap (not frozen)` or `placeholder` status without an explicit planning conversation that freezes the task file. Do not auto-start anything; explicit product-owner direction is required.
 - If the user asks "what's next?", confirm the working-rules baseline still holds and offer the action recorded in the section above.

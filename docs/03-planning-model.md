@@ -203,7 +203,11 @@ A scaffold milestone README lives at [`../context/tasks/_milestone-template/READ
 | What's the binding architectural decision behind X? | [`decisions/`](decisions/) (ADRs) |
 | What's the project context / purpose? | [`05-product-context.md`](05-product-context.md) |
 | What's the capability outline? | [`06-feature-blueprint.md`](06-feature-blueprint.md) |
-| What's the technical direction? | [`07-technical-direction.md`](07-technical-direction.md) |
+| What's the bootstrap-time stack and initial architecture direction? | [`07-technical-direction.md`](07-technical-direction.md) |
+| What's the current living architecture doctrine? | [`09-architecture.md`](09-architecture.md) (living counterpart to `07`) |
+| What's the current living testing-strategy doctrine? | [`10-testing-strategy.md`](10-testing-strategy.md) |
+| What's the current living engineering-practices doctrine? | [`11-engineering-practices.md`](11-engineering-practices.md) |
+| How does engineering doctrine evolve (proposing, accepting, superseding)? | [`09-architecture.md` §4](09-architecture.md) (canonical) · restated in `10` §4 and `11` §4 |
 | What's the active phase scope baseline? | [`08-scope.md`](08-scope.md) (renamed per phase) |
 | Where do operational commands and environments live? | [`04-runbook.md`](04-runbook.md) |
 | Are there ideation / source documents? | [`../context/product-source/`](../context/product-source/) — not authority |

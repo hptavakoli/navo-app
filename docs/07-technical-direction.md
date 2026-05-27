@@ -1,8 +1,10 @@
 # Navo App — Technical direction
 
-**Status:** Proposed direction recorded at bootstrap. **All technical choices below are proposed, not final.** Validation through foundation research and ADRs is a precondition of the first implementation milestone; until then, treat this document as a working hypothesis rather than a binding commitment.
+**Status:** Bootstrap-time stack and initial architecture direction. **All technical choices below are proposed, not final.** Validation through foundation research and ADRs is a precondition of the first implementation milestone; until then, treat this document as a working hypothesis rather than a binding commitment.
 
-> Stack, architecture direction, key technical commitments. Distinguishes "what we've decided technically" from "what we're still researching." When research is part of the workflow, this document is informed by [`research/`](research/) synthesis output and supersedes synthesis once committed.
+> Bootstrap-time stack, initial architecture direction, key technical commitments. Distinguishes "what we've decided technically" from "what we're still researching." When research is part of the workflow, this document is informed by [`research/`](research/) synthesis output and supersedes synthesis once committed.
+
+> **Living architecture counterpart:** as architecture commitments emerge from planning conversations, ADRs, and executed work, the **current** architecture is tracked in [`09-architecture.md`](09-architecture.md) (living doctrine). This document is preserved as the as-of-bootstrap snapshot.
 
 ---
 

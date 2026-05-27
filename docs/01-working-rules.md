@@ -98,6 +98,8 @@ A rule may be broken only via the exception process in §11.
 
 ## 10. Project-specific rules
 
+This section holds **hard, binding** project-specific rules — the kind whose violation requires the exception process in §11. It is distinct from the **descriptive engineering doctrine** at [`09-architecture.md`](09-architecture.md), [`10-testing-strategy.md`](10-testing-strategy.md), and [`11-engineering-practices.md`](11-engineering-practices.md), which restates current architecture / testing / practices commitments and points back to ADRs and the rules below as binding sources. Doctrine never overrides §10 hard rules; if doctrine and a §10 rule appear to conflict, §10 wins and doctrine is updated to match.
+
 > Add domain-specific working rules here as they emerge. Examples (delete if not applicable):
 >
 > - *Pipeline / processing discipline* — input validation, fallback rules, determinism rules.
